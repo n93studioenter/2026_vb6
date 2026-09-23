@@ -1,0 +1,552 @@
+2026-04-07 08:55:14.960: [INFO] OnDoneLoading sync enabled: 0
+2026-04-07 08:56:45.730: [INFO] OnDoneLoading sync enabled: 0
+2026-04-07 08:58:24.269: [INFO] OnDoneLoading sync enabled: 0
+2026-04-07 08:58:57.080: [INFO] OnDoneLoading sync enabled: 0
+2026-04-07 09:00:28.993: [INFO] OnDoneLoading sync enabled: 0
+2026-04-07 09:01:54.346: [INFO] OnDoneLoading sync enabled: 0
+2026-04-07 09:02:46.715: [INFO] OnDoneLoading sync enabled: 0
+2026-04-07 09:04:14.293: [INFO] OnDoneLoading sync enabled: 0
+2026-04-07 09:05:49.729: [INFO] OnDoneLoading sync enabled: 0
+2026-04-08 01:15:26.611: [INFO] OnDoneLoading sync enabled: 0
+2026-04-08 04:04:07.963: [INFO] OnDoneLoading sync enabled: 0
+2026-05-09 01:42:32.310: [INFO] OnDoneLoading sync enabled: 0
+2026-05-09 01:43:49.524: [INFO] OnDoneLoading sync enabled: 0
+2026-05-09 01:47:15.448: [INFO] OnDoneLoading sync enabled: 0
+2026-07-22 07:38:21.331: [INFO] OnDoneLoading sync enabled: 0
+2026-07-25 02:39:40.280: [INFO] OnDoneLoading sync enabled: 0
+2026-07-30 00:13:38.500: [INFO] OnDoneLoading sync enabled: 0
+2026-07-30 02:22:36.954: [INFO] OnDoneLoading sync enabled: 0
+2026-07-30 10:31:14.051: [INFO] OnDoneLoading sync enabled: 0
+2026-07-31 01:20:49.789: [INFO] OnDoneLoading sync enabled: 0
+2026-08-03 08:08:18.195: [INFO] OnDoneLoading sync enabled: 0
+2026-08-03 10:13:25.575: [INFO] OnDoneLoading sync enabled: 0
+2026-08-07 03:11:35.351: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-08-07 03:11:35.351: [INFO] Profiles total count: 1
+2026-08-07 03:11:35.351: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-08-03T10:31:01.560Z
+2026-08-07 03:11:35.351: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-08-07 03:11:35.351: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-08-03T10:31:01.560Z
+2026-08-07 03:11:35.351: [INFO] OnDoneLoading sync enabled: 0
+2026-08-07 03:11:35.351: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-07 03:11:35.351: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-07 03:11:35.351: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-07 03:11:39.187: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-24 10:04:45.257: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-08-24 10:04:45.257: [INFO] Profiles total count: 1
+2026-08-24 10:04:45.257: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-08-10T02:10:49.119Z
+2026-08-24 10:04:45.257: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-08-24 10:04:45.257: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-08-10T02:10:49.119Z
+2026-08-24 10:04:45.257: [INFO] OnDoneLoading sync enabled: 0
+2026-08-24 10:04:45.257: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-24 10:04:45.257: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-24 10:04:45.257: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-24 10:07:48.163: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 09:27:00.568: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-08-27 09:27:00.568: [INFO] Profiles total count: 1
+2026-08-27 09:27:00.568: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-08-24T10:07:46.506Z
+2026-08-27 09:27:00.568: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-08-27 09:27:00.568: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-08-24T10:07:46.506Z
+2026-08-27 09:27:00.568: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 09:27:00.568: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 09:27:00.568: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 09:27:00.568: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 09:27:23.620: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-28 08:22:23.460: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-08-28 08:22:23.460: [INFO] Profiles total count: 1
+2026-08-28 08:22:23.460: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:27:00.667Z
+2026-08-28 08:22:23.460: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-08-28 08:22:23.460: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:27:00.667Z
+2026-08-28 08:22:23.460: [INFO] OnDoneLoading sync enabled: 0
+2026-08-28 08:22:23.460: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-28 08:22:23.460: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-28 08:22:23.460: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-28 08:22:28.286: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 03:33:39.886: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-08-29 03:33:39.886: [INFO] Profiles total count: 1
+2026-08-29 03:33:39.886: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-08-28T08:22:23.544Z
+2026-08-29 03:33:39.886: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-08-29 03:33:39.887: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-08-28T08:22:23.544Z
+2026-08-29 03:33:39.887: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 03:33:39.887: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 03:33:39.887: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 03:33:39.887: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 03:34:29.318: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-08 08:18:06.421: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-08 08:18:06.421: [INFO] Profiles total count: 1
+2026-09-08 08:18:06.421: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-08-29T03:34:11.761Z
+2026-09-08 08:18:06.421: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-08 08:18:06.421: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-08-29T03:34:11.761Z
+2026-09-08 08:18:06.421: [INFO] OnDoneLoading sync enabled: 0
+2026-09-08 08:18:06.421: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-08 08:18:06.421: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-08 08:18:06.421: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-08 08:18:18.685: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-08 08:30:25.804: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-08 08:30:25.804: [INFO] Profiles total count: 1
+2026-09-08 08:30:25.804: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-08T08:18:06.488Z
+2026-09-08 08:30:25.804: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-08 08:30:25.804: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-08T08:18:06.488Z
+2026-09-08 08:30:25.804: [INFO] OnDoneLoading sync enabled: 0
+2026-09-08 08:30:25.804: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-08 08:30:25.804: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-08 08:30:25.804: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-08 08:30:36.339: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-08 08:31:27.670: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-08 08:31:27.670: [INFO] Profiles total count: 1
+2026-09-08 08:31:27.670: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-08T08:30:25.880Z
+2026-09-08 08:31:27.670: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-08 08:31:27.670: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-08T08:30:25.880Z
+2026-09-08 08:31:27.670: [INFO] OnDoneLoading sync enabled: 0
+2026-09-08 08:31:27.670: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-08 08:31:27.670: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-08 08:31:27.670: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-08 10:53:08.411: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 01:14:42.355: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 01:14:42.355: [INFO] Profiles total count: 1
+2026-09-09 01:14:42.355: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-08T10:53:07.183Z
+2026-09-09 01:14:42.355: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 01:14:42.355: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-08T10:53:07.183Z
+2026-09-09 01:14:42.355: [INFO] OnDoneLoading sync enabled: 0
+2026-09-09 01:14:42.355: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-09 01:14:42.355: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-09 01:14:42.355: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 01:14:52.477: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 02:12:22.929: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 02:12:22.929: [INFO] Profiles total count: 1
+2026-09-09 02:12:22.929: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T01:14:49.182Z
+2026-09-09 02:12:22.929: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 02:12:22.929: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T01:14:49.182Z
+2026-09-09 02:12:22.929: [INFO] OnDoneLoading sync enabled: 0
+2026-09-09 02:12:22.929: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-09 02:12:22.929: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-09 02:12:22.929: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 02:12:49.594: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 02:13:11.079: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 02:13:11.079: [INFO] Profiles total count: 1
+2026-09-09 02:13:11.079: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T02:12:32.157Z
+2026-09-09 02:13:11.079: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 02:13:11.079: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T02:12:32.157Z
+2026-09-09 02:13:11.079: [INFO] OnDoneLoading sync enabled: 0
+2026-09-09 02:13:11.079: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-09 02:13:11.079: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-09 02:13:11.079: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 02:13:14.504: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 03:02:55.585: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 03:02:55.585: [INFO] Profiles total count: 1
+2026-09-09 03:02:55.585: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T02:13:11.153Z
+2026-09-09 03:02:55.585: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 03:02:55.585: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T02:13:11.153Z
+2026-09-09 03:02:55.585: [INFO] OnDoneLoading sync enabled: 0
+2026-09-09 03:02:55.585: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-09 03:02:55.585: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-09 03:02:55.585: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 03:03:08.494: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 03:03:21.684: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 03:03:21.684: [INFO] Profiles total count: 1
+2026-09-09 03:03:21.684: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T03:02:55.690Z
+2026-09-09 03:03:21.684: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 03:03:21.684: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T03:02:55.690Z
+2026-09-09 03:03:21.684: [INFO] OnDoneLoading sync enabled: 0
+2026-09-09 03:03:21.684: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-09 03:03:21.684: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-09 03:03:21.684: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 03:03:55.834: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 03:04:48.530: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 03:04:48.530: [INFO] Profiles total count: 1
+2026-09-09 03:04:48.530: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T03:03:47.983Z
+2026-09-09 03:04:48.530: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 03:04:48.530: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T03:03:47.983Z
+2026-09-09 03:04:48.530: [INFO] OnDoneLoading sync enabled: 0
+2026-09-09 03:04:48.530: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-09 03:04:48.530: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-09 03:04:48.530: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 03:12:37.405: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 03:18:24.699: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 03:18:24.699: [INFO] Profiles total count: 1
+2026-09-09 03:18:24.700: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T03:12:36.078Z
+2026-09-09 03:18:24.700: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 03:18:24.700: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T03:12:36.078Z
+2026-09-09 03:18:24.700: [INFO] OnDoneLoading sync enabled: 0
+2026-09-09 03:18:24.700: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-09 03:18:24.700: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-09 03:18:24.700: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 03:18:50.891: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 03:19:32.556: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 03:19:32.556: [INFO] Profiles total count: 1
+2026-09-09 03:19:32.556: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T03:18:24.771Z
+2026-09-09 03:19:32.556: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 03:19:32.556: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T03:18:24.771Z
+2026-09-09 03:19:32.556: [INFO] OnDoneLoading sync enabled: 0
+2026-09-09 03:19:32.556: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-09 03:19:32.556: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-09 03:19:32.556: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 03:19:36.056: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 04:00:45.618: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 04:00:45.618: [INFO] Profiles total count: 1
+2026-09-09 04:00:45.618: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T03:19:32.633Z
+2026-09-09 04:00:45.618: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 04:00:45.618: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T03:19:32.633Z
+2026-09-09 04:00:45.618: [INFO] OnDoneLoading sync enabled: 0
+2026-09-09 04:00:45.618: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-09 04:00:45.618: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-09 04:00:45.618: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 04:01:03.011: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 04:13:21.389: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 04:13:21.389: [INFO] Profiles total count: 1
+2026-09-09 04:13:21.389: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T04:00:54.749Z
+2026-09-09 04:13:21.389: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 04:13:21.389: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T04:00:54.749Z
+2026-09-09 04:13:21.389: [INFO] OnDoneLoading sync enabled: 0
+2026-09-09 04:13:21.389: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-09 04:13:21.389: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-09 04:13:21.389: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 04:13:24.211: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 07:16:01.100: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 07:16:01.100: [INFO] Profiles total count: 1
+2026-09-09 07:16:01.100: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T04:13:21.468Z
+2026-09-09 07:16:01.100: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 07:16:01.100: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T04:13:21.468Z
+2026-09-09 07:16:01.100: [INFO] OnDoneLoading sync enabled: 0
+2026-09-09 07:16:01.100: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-09 07:16:01.100: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-09 07:16:01.100: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 07:16:26.529: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 07:19:22.339: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 07:19:22.339: [INFO] Profiles total count: 1
+2026-09-09 07:19:22.339: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T07:16:01.177Z
+2026-09-09 07:19:22.339: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 07:19:22.339: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T07:16:01.177Z
+2026-09-09 07:19:22.339: [INFO] OnDoneLoading sync enabled: 0
+2026-09-09 07:19:22.339: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-09 07:19:22.339: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-09 07:19:22.339: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 07:19:48.826: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 07:29:45.497: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 07:29:45.497: [INFO] Profiles total count: 1
+2026-09-09 07:29:45.497: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T07:19:22.413Z
+2026-09-09 07:29:45.497: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-09 07:29:45.497: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T07:19:22.413Z
+2026-09-09 07:29:45.497: [INFO] OnDoneLoading sync enabled: 0
+2026-09-09 07:29:45.497: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-09 07:29:45.497: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-09 07:29:45.497: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-09 07:29:51.043: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-10 00:52:11.907: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-10 00:52:11.907: [INFO] Profiles total count: 1
+2026-09-10 00:52:11.907: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T07:29:45.627Z
+2026-09-10 00:52:11.907: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-10 00:52:11.907: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-09T07:29:45.627Z
+2026-09-10 00:52:11.907: [INFO] OnDoneLoading sync enabled: 0
+2026-09-10 00:52:11.907: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-10 00:52:11.907: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-10 00:52:11.907: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-10 00:52:22.928: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-14 08:44:04.462: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-14 08:44:04.462: [INFO] Profiles total count: 1
+2026-09-14 08:44:04.462: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-10T00:52:11.979Z
+2026-09-14 08:44:04.462: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-14 08:44:04.462: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-10T00:52:11.979Z
+2026-09-14 08:44:04.462: [INFO] OnDoneLoading sync enabled: 0
+2026-09-14 08:44:04.462: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-14 08:44:04.462: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-14 08:44:04.462: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-14 08:44:29.788: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-14 08:46:00.777: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-14 08:46:00.777: [INFO] Profiles total count: 1
+2026-09-14 08:46:00.777: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-14T08:44:18.376Z
+2026-09-14 08:46:00.777: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-14 08:46:00.777: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-14T08:44:18.376Z
+2026-09-14 08:46:00.777: [INFO] OnDoneLoading sync enabled: 0
+2026-09-14 08:46:00.777: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-14 08:46:00.777: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-14 08:46:00.777: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-14 08:46:04.635: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-14 08:46:20.330: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-14 08:46:20.330: [INFO] Profiles total count: 1
+2026-09-14 08:46:20.330: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-14T08:46:00.851Z
+2026-09-14 08:46:20.330: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-14 08:46:20.330: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-14T08:46:00.851Z
+2026-09-14 08:46:20.330: [INFO] OnDoneLoading sync enabled: 0
+2026-09-14 08:46:20.330: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-14 08:46:20.330: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-14 08:46:20.330: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-14 08:46:35.150: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-14 08:47:29.917: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-14 08:47:29.917: [INFO] Profiles total count: 1
+2026-09-14 08:47:29.917: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-14T08:46:20.401Z
+2026-09-14 08:47:29.917: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-14 08:47:29.917: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-14T08:46:20.401Z
+2026-09-14 08:47:29.917: [INFO] OnDoneLoading sync enabled: 0
+2026-09-14 08:47:29.917: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-14 08:47:29.917: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-14 08:47:29.917: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-14 08:47:33.342: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-16 04:43:18.120: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-16 04:43:18.120: [INFO] Profiles total count: 1
+2026-09-16 04:43:18.120: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-14T08:47:29.997Z
+2026-09-16 04:43:18.120: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-16 04:43:18.120: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-14T08:47:29.997Z
+2026-09-16 04:43:18.120: [INFO] OnDoneLoading sync enabled: 0
+2026-09-16 04:43:18.120: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-16 04:43:18.120: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-16 04:43:18.120: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-16 04:43:23.312: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-18 01:24:39.446: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-18 01:24:39.446: [INFO] Profiles total count: 1
+2026-09-18 01:24:39.447: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-16T04:43:18.221Z
+2026-09-18 01:24:39.447: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-18 01:24:39.447: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-16T04:43:18.221Z
+2026-09-18 01:24:39.447: [INFO] OnDoneLoading sync enabled: 0
+2026-09-18 01:24:39.447: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-18 01:24:39.447: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-18 01:24:39.447: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-18 01:24:50.511: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-18 01:41:43.014: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-18 01:41:43.014: [INFO] Profiles total count: 1
+2026-09-18 01:41:43.014: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-18T01:24:49.047Z
+2026-09-18 01:41:43.014: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-18 01:41:43.014: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-18T01:24:49.047Z
+2026-09-18 01:41:43.014: [INFO] OnDoneLoading sync enabled: 0
+2026-09-18 01:41:43.014: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-18 01:41:43.014: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-18 01:41:43.014: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-18 01:42:01.177: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-18 01:42:26.591: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-18 01:42:26.591: [INFO] Profiles total count: 1
+2026-09-18 01:42:26.591: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-18T01:41:43.110Z
+2026-09-18 01:42:26.591: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-18 01:42:26.591: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-18T01:41:43.110Z
+2026-09-18 01:42:26.591: [INFO] OnDoneLoading sync enabled: 0
+2026-09-18 01:42:26.591: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-18 01:42:26.591: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-18 01:42:26.591: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-18 01:42:30.561: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-19 00:33:03.459: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-19 00:33:03.459: [INFO] Profiles total count: 1
+2026-09-19 00:33:03.459: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-18T01:42:26.667Z
+2026-09-19 00:33:03.459: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-19 00:33:03.459: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-18T01:42:26.667Z
+2026-09-19 00:33:03.459: [INFO] OnDoneLoading sync enabled: 0
+2026-09-19 00:33:03.459: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-19 00:33:03.459: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-19 00:33:03.459: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-19 00:33:30.347: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-19 01:35:20.648: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-19 01:35:20.648: [INFO] Profiles total count: 1
+2026-09-19 01:35:20.648: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-19T00:33:29.188Z
+2026-09-19 01:35:20.648: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-19 01:35:20.648: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-19T00:33:29.188Z
+2026-09-19 01:35:20.648: [INFO] OnDoneLoading sync enabled: 0
+2026-09-19 01:35:20.648: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-19 01:35:20.648: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-19 01:35:20.648: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-19 01:35:26.493: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-19 02:31:05.471: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-19 02:31:05.471: [INFO] Profiles total count: 1
+2026-09-19 02:31:05.471: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-19T01:35:20.787Z
+2026-09-19 02:31:05.471: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-19 02:31:05.471: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-19T01:35:20.787Z
+2026-09-19 02:31:05.471: [INFO] OnDoneLoading sync enabled: 0
+2026-09-19 02:31:05.471: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-19 02:31:05.471: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-19 02:31:05.471: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-19 02:31:12.975: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-19 02:35:15.458: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-19 02:35:15.458: [INFO] Profiles total count: 1
+2026-09-19 02:35:15.458: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-19T02:31:05.570Z
+2026-09-19 02:35:15.458: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-19 02:35:15.458: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-19T02:31:05.570Z
+2026-09-19 02:35:15.458: [INFO] OnDoneLoading sync enabled: 0
+2026-09-19 02:35:15.458: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-19 02:35:15.458: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-19 02:35:15.458: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-19 02:36:49.665: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 03:06:38.546: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 03:06:38.546: [INFO] Profiles total count: 1
+2026-09-22 03:06:38.546: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-19T02:36:10.995Z
+2026-09-22 03:06:38.546: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 03:06:38.546: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-19T02:36:10.995Z
+2026-09-22 03:06:38.546: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 03:06:38.546: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 03:06:38.546: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 03:06:38.546: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 03:06:44.167: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 03:20:38.506: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 03:20:38.506: [INFO] Profiles total count: 1
+2026-09-22 03:20:38.506: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T03:06:38.704Z
+2026-09-22 03:20:38.506: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 03:20:38.506: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T03:06:38.704Z
+2026-09-22 03:20:38.506: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 03:20:38.506: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 03:20:38.506: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 03:20:38.506: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 03:22:26.055: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 03:23:08.691: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 03:23:08.691: [INFO] Profiles total count: 1
+2026-09-22 03:23:08.691: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T03:22:24.469Z
+2026-09-22 03:23:08.691: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 03:23:08.691: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T03:22:24.469Z
+2026-09-22 03:23:08.691: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 03:23:08.691: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 03:23:08.691: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 03:23:08.691: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 03:54:11.976: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:12:27.193: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:12:27.193: [INFO] Profiles total count: 1
+2026-09-22 07:12:27.193: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T03:24:12.743Z
+2026-09-22 07:12:27.193: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:12:27.193: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T03:24:12.743Z
+2026-09-22 07:12:27.193: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 07:12:27.193: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 07:12:27.193: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 07:12:27.193: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:13:06.516: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:13:09.663: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:13:09.663: [INFO] Profiles total count: 1
+2026-09-22 07:13:09.663: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:12:27.275Z
+2026-09-22 07:13:09.663: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:13:09.663: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:12:27.275Z
+2026-09-22 07:13:09.663: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 07:13:09.663: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 07:13:09.663: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 07:13:09.663: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:13:28.427: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:13:30.996: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:13:30.996: [INFO] Profiles total count: 1
+2026-09-22 07:13:30.996: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:13:09.747Z
+2026-09-22 07:13:30.996: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:13:30.996: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:13:09.747Z
+2026-09-22 07:13:30.996: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 07:13:30.996: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 07:13:30.996: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 07:13:30.996: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:13:37.564: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:14:02.913: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:14:02.913: [INFO] Profiles total count: 1
+2026-09-22 07:14:02.913: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:13:31.084Z
+2026-09-22 07:14:02.913: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:14:02.913: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:13:31.084Z
+2026-09-22 07:14:02.913: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 07:14:02.913: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 07:14:02.913: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 07:14:02.913: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:14:27.394: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:14:59.512: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:14:59.512: [INFO] Profiles total count: 1
+2026-09-22 07:14:59.512: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:14:02.996Z
+2026-09-22 07:14:59.512: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:14:59.512: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:14:02.996Z
+2026-09-22 07:14:59.512: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 07:14:59.512: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 07:14:59.512: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 07:14:59.512: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:15:28.455: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:19:09.557: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:19:09.557: [INFO] Profiles total count: 1
+2026-09-22 07:19:09.557: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:14:59.593Z
+2026-09-22 07:19:09.557: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:19:09.557: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:14:59.593Z
+2026-09-22 07:19:09.557: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 07:19:09.557: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 07:19:09.557: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 07:19:09.557: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:19:21.287: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:19:24.021: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:19:24.021: [INFO] Profiles total count: 1
+2026-09-22 07:19:24.021: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:19:09.646Z
+2026-09-22 07:19:24.021: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:19:24.021: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:19:09.646Z
+2026-09-22 07:19:24.021: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 07:19:24.021: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 07:19:24.021: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 07:19:24.021: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:19:29.461: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:19:31.991: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:19:31.991: [INFO] Profiles total count: 1
+2026-09-22 07:19:31.991: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:19:24.106Z
+2026-09-22 07:19:31.991: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:19:31.991: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:19:24.106Z
+2026-09-22 07:19:31.991: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 07:19:31.991: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 07:19:31.991: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 07:19:31.991: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:20:02.527: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:20:06.232: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:20:06.232: [INFO] Profiles total count: 1
+2026-09-22 07:20:06.232: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:19:32.074Z
+2026-09-22 07:20:06.232: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:20:06.232: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:19:32.074Z
+2026-09-22 07:20:06.232: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 07:20:06.232: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 07:20:06.232: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 07:20:06.232: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:20:33.834: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:20:36.161: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:20:36.161: [INFO] Profiles total count: 1
+2026-09-22 07:20:36.161: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:20:06.319Z
+2026-09-22 07:20:36.161: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:20:36.161: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:20:06.319Z
+2026-09-22 07:20:36.161: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 07:20:36.161: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 07:20:36.161: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 07:20:36.161: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:21:16.691: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:21:47.111: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:21:47.111: [INFO] Profiles total count: 1
+2026-09-22 07:21:47.111: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:20:36.246Z
+2026-09-22 07:21:47.111: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:21:47.111: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:20:36.246Z
+2026-09-22 07:21:47.111: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 07:21:47.111: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 07:21:47.111: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 07:21:47.111: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:22:19.396: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:22:22.210: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:22:22.210: [INFO] Profiles total count: 1
+2026-09-22 07:22:22.210: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:21:47.198Z
+2026-09-22 07:22:22.210: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:22:22.210: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:21:47.198Z
+2026-09-22 07:22:22.210: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 07:22:22.210: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 07:22:22.210: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 07:22:22.210: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:22:27.404: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:22:41.287: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:22:41.287: [INFO] Profiles total count: 1
+2026-09-22 07:22:41.287: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:22:22.291Z
+2026-09-22 07:22:41.287: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:22:41.287: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:22:22.291Z
+2026-09-22 07:22:41.287: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 07:22:41.287: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 07:22:41.287: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 07:22:41.287: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:24:10.356: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:25:05.008: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:25:05.008: [INFO] Profiles total count: 1
+2026-09-22 07:25:05.008: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:23:37.261Z
+2026-09-22 07:25:05.008: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:25:05.008: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:23:37.261Z
+2026-09-22 07:25:05.008: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 07:25:05.008: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 07:25:05.008: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 07:25:05.008: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:25:12.085: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:25:17.733: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:25:17.733: [INFO] Profiles total count: 1
+2026-09-22 07:25:17.733: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:25:05.088Z
+2026-09-22 07:25:17.733: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:25:17.733: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:25:05.088Z
+2026-09-22 07:25:17.733: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 07:25:17.733: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 07:25:17.733: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 07:25:17.733: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:26:09.819: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 07:26:12.424: [INFO] CurrentProfilePath: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:26:12.424: [INFO] Profiles total count: 1
+2026-09-22 07:26:12.424: [INFO] Profile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:25:17.817Z
+2026-09-22 07:26:12.424: [INFO] LastUsedProfileDir: D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default
+2026-09-22 07:26:12.424: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\DA3\DA3\Tools\Debug\SaovietTax.exe.WebView2\EBWebView\Default lastActive=2026-09-22T07:25:17.817Z
+2026-09-22 07:26:12.424: [INFO] OnDoneLoading sync enabled: 0
+2026-09-22 07:26:12.424: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-22 07:26:12.424: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-22 07:26:12.424: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-22 10:02:47.510: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1

@@ -1,0 +1,22 @@
+{
+  "versions": {
+    "18.7": {
+      "fileId": "19OijbnUy2Sk0Ge-tbxdUvu-C7sQXtE8k",
+      "fileName": "Version1.0.zip",
+      "releaseDate": "2026-07-18",
+      "description": "Version cũ, chưa sửa giao diện"
+    },
+    "19.8": {
+      "fileId": "1R2c3KfLlYP89EEML-9-XrqsFsU-H5idO",
+      "fileName": "Version1.1.zip",
+      "releaseDate": "2026-08-19",
+      "description": "Version đã sửa giao diện, có tải tự động "
+    }, 
+    "1.1": {
+      "fileId": "1Q77O48oaiJNAp8PaBQoqCWdiuZ_eRhhf",
+      "fileName": "1.4",
+      "releaseDate": "2026-08-25",
+      "description": "Phiên bản mới nhất ngày 26-08"
+    }
+  }
+}

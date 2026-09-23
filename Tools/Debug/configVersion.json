@@ -1,0 +1,35 @@
+{
+  "versions": {
+    "18.7": {
+      "fileId": "https://github.com/n93studioenter/SaovietGit/releases/download/latest-config/18.7.zip",
+      "fileName": "Version1.0.zip",
+      "releaseDate": "2026-07-18",
+      "description": "Version cu, chua s?a giao di?n"
+    },
+    "19.8": {
+      "fileId": "1R2c3KfLlYP89EEML-9-XrqsFsU-H5idO",
+      "fileName": "Version1.1.zip",
+      "releaseDate": "2026-08-19",
+      "description": "Version dã s?a giao di?n, có t?i t? d?ng"
+    }, 
+    "1.4": {
+      "fileId": "1R2c3KfLlYP89EEML-9-XrqsFsU-H5idd",
+      "fileName": "Version1.4.zip",
+      "releaseDate": "2026-09-07",
+      "description": "Version dã s?a giao di?n, có t?i t? d?ng"
+    }, 
+     "1.5": {
+      "fileId": "1R2c3KfLlYP89EEML-9-XrqsFsU-H5idd",
+      "fileName": "Version1.5.zip",
+      "releaseDate": "2026-09-07",
+      "description": "Version dã s?a giao di?n, có t?i t? d?ng"
+    }, 
+    "1.1": {
+      "fileId": "1Q77O48oaiJNAp8PaBQoqCWdiuZ_eRhhf",
+      "fileName": "1.61",
+      "releaseDate": "2026-08-25",
+      "description": "Phiên b?n m?i nh?t ngày 26-08"
+    }
+  }
+}
+
