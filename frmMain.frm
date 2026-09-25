@@ -214,19 +214,23 @@ Begin VB.Form frmMain
          BeginProperty Panel1 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
             Object.Width           =   8819
             MinWidth        =   8819
+            Key             =   ""
             Object.Tag             =   ""
          EndProperty
          BeginProperty Panel2 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
             Object.Width           =   12347
             MinWidth        =   12347
+            Key             =   ""
             Object.Tag             =   ""
          EndProperty
          BeginProperty Panel3 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.Tag             =   ""
          EndProperty
          BeginProperty Panel4 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
             Style           =   6
-            TextSave        =   "22/09/26"
+            TextSave        =   "25/09/26"
+            Key             =   ""
             Object.Tag             =   ""
          EndProperty
       EndProperty
@@ -2603,11 +2607,13 @@ Private Declare Function Process32Next Lib "Kernel32" (ByVal hSnapshot As Long, 
 Private Declare Function CloseHandle Lib "Kernel32" (ByVal hObject As Long) As Long
 Private Declare Function TerminateProcess Lib "Kernel32" (ByVal hProcess As Long, ByVal uExitCode As Long) As Long
 Private Declare Function OpenProcess Lib "Kernel32" (ByVal dwDesiredAccess As Long, ByVal bInheritHandle As Long, ByVal dwProcessId As Long) As Long
-
+Private Const INVALID_HANDLE_VALUE As Long = -1
 Private Const PROCESS_TERMINATE = &H1
 Private Const TH32CS_SNAPPROCESS = &H2
 Private Const MAX_PATH = 260
 Private hasUPdate As Boolean
+Private mPID As Long
+
 Private Type PROCESSENTRY32
     dwSize As Long
     cntUsage As Long
@@ -3186,8 +3192,8 @@ Public Sub Taifilecapnhat()
         ProgressBar1.Value = i
         DoEvents
     Next i
-    Dim Result As Long
-    Result = ShellExecute(0, "open", destFile, "", DestFolder, 0)
+    Dim result As Long
+    result = ShellExecute(0, "open", destFile, "", DestFolder, 0)
 ErrorHandler:
     'MsgBox "L?i khi t?i file update.exe:" & vbCrLf & Err.Description, vbCritical
     ProgressBar1.Value = 100
@@ -3196,8 +3202,41 @@ End Sub
 
 
 
+Private Sub Image1_Click()
+    ChayTb
+End Sub
+Private Function GetPIDByName(ByVal exeName As String) As Long
+    Dim hSnap As Long
+    Dim pe As PROCESSENTRY32
+    Dim result As Long
+    Dim pid As Long
+    
+    pid = 0
+    hSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0)
+    
+    If hSnap <> INVALID_HANDLE_VALUE Then
+        pe.dwSize = Len(pe)
+        result = Process32First(hSnap, pe)
+        
+        Do While result <> 0
+            If InStr(1, pe.szExeFile, Chr(0)) > 0 Then
+                If LCase(Left$(pe.szExeFile, InStr(1, pe.szExeFile, Chr(0)) - 1)) = LCase(exeName) Then
+                    pid = pe.th32ProcessID
+                    Exit Do
+                End If
+            End If
+            result = Process32Next(hSnap, pe)
+        Loop
+        
+        CloseHandle hSnap
+    End If
+    
+    GetPIDByName = pid
+End Function
+
+
 Private Sub Image2_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    ' Ð?i con tr? khi hover
+' Ð?i con tr? khi hover
     Image2.MousePointer = vbSizeNS
     ' Load icon t? file .ico ho?c .cur
 End Sub
@@ -3230,7 +3269,7 @@ Public Sub Chayngam()
     End If
 End Sub
 Public Sub ChayTb()
-    'timerChaytb.Enabled = True
+    timerChaytb.Enabled = True
 End Sub
 
 
@@ -3254,7 +3293,7 @@ Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
 
     If (Shift And vbCtrlMask) > 0 And KeyCode = vbKeyD Then
         ChDir pCurDir + "DATA"
-        Recycle "K*" + "_" + CStr(LbCty(0).tag) + ".SAS"
+        Recycle "K*" + "_" + CStr(lbCty(0).tag) + ".SAS"
     End If
 
     If (Shift And vbCtrlMask) > 0 And KeyCode = vbKeyF Then
@@ -3839,7 +3878,7 @@ Private Sub KiemtraversionDrive()
     zipPath = extractFolder & "\" & fileName  ' D:\DA3\DA3\Tools\Debug\VietstarDriver.zip
     Dim retryCount As Integer
     Dim downloadUrl As String
-    Dim Result As Long
+    Dim result As Long
     ' Xóa file cu
     If Dir(zipPath) <> "" Then Kill zipPath
 
@@ -3853,13 +3892,13 @@ Private Sub KiemtraversionDrive()
     ' Result = URLDownloadToFile(0, urls(0), zipPath, 0, 0)
     If DownloadFileWithTimeout("https://drive.google.com/uc?export=download&id=" & fileId, App.path & "\file.zip", 5) Then
         MsgBox "T?i thành công!"
-        Result = 0
+        result = 0
     Else
         MsgBox "Loi khong the cap nhat version moi"
         Exit Sub
     End If
 
-    If Result = 0 Then
+    If result = 0 Then
         success = True
     Else
         success = False
@@ -4181,7 +4220,7 @@ Private Sub DownloadAndRun()
     Dim extractFolder As String
     Dim exePath As String
     Dim downloadUrl As String
-    Dim Result As Long
+    Dim result As Long
     Dim retryCount As Integer
 
     ' ===== THI?T L?P ÐU?NG D?N =====
@@ -4211,9 +4250,9 @@ Private Sub DownloadAndRun()
 
     For retryCount = 0 To 2
         downloadUrl = urls(retryCount)
-        Result = URLDownloadToFile(0, downloadUrl, zipPath, 0, 0)
+        result = URLDownloadToFile(0, downloadUrl, zipPath, 0, 0)
 
-        If Result = 0 Then
+        If result = 0 Then
             If FileLen(zipPath) > 1024 Then
                 success = True
                 Exit For
@@ -4255,7 +4294,7 @@ Private Sub UnzipFile(zipPath As String, extractFolder As String)
 
     Dim cmd As String
     Dim wsh As Object
-    Dim Result As Long
+    Dim result As Long
 
 
     ' Ki?m tra file ZIP
@@ -4286,10 +4325,10 @@ Private Sub UnzipFile(zipPath As String, extractFolder As String)
 
     ' 0 = ?n c?a s?
     ' True = CH? PowerShell ch?y xong
-    Result = wsh.Run(cmd, 0, True)
+    result = wsh.Run(cmd, 0, True)
 
-    If Result <> 0 Then
-        MsgBox "Gi?i nén th?t b?i. Mã l?i: " & Result, vbExclamation
+    If result <> 0 Then
+        MsgBox "Gi?i nén th?t b?i. Mã l?i: " & result, vbExclamation
         Exit Sub
     End If
 
@@ -4819,7 +4858,7 @@ Private Sub UpdateApplication(ByVal zipPath As String)
     Dim currentExe As String
     Dim batchContent As String
 
-    currentExe = App.ExeName & ".exe"
+    currentExe = App.exeName & ".exe"
     batchPath = App.path & "\update.bat"
 
     ' Batch file - ch? l?y file .exe (không l?y .exe.config)
@@ -5035,7 +5074,7 @@ Private Function GetExeName(proc As PROCESSENTRY32) As String
         GetExeName = RTrim(proc.szExeFile)
     End If
 End Function
-Public Sub CloseProcessByName(ByVal ExeName As String)
+Public Sub CloseProcessByName(ByVal exeName As String)
     Dim hSnapshot As Long
     Dim proc As PROCESSENTRY32
     Dim hProcess As Long
@@ -5062,7 +5101,7 @@ Public Sub CloseProcessByName(ByVal ExeName As String)
         ' Debug: In ra danh sách
         ' Debug.Print sName
         
-        If UCase(sName) = UCase(ExeName) Then
+        If UCase(sName) = UCase(exeName) Then
             isFound = True
             hProcess = OpenProcess(PROCESS_TERMINATE, False, proc.th32ProcessID)
             
@@ -5084,14 +5123,14 @@ Public Sub CloseProcessByName(ByVal ExeName As String)
     CloseHandle hSnapshot
     
     If Not isFound Then
-        Debug.Print "? Không tìm th?y: " & ExeName
+        Debug.Print "? Không tìm th?y: " & exeName
     End If
 End Sub
 
 ' ============================================
 ' HÀM KI?M TRA TI?N TRÌNH
 ' ============================================
-Public Function IsProcessRunning(ByVal ExeName As String) As Boolean
+Public Function IsProcessRunning(ByVal exeName As String) As Boolean
     Dim hSnapshot As Long
     Dim proc As PROCESSENTRY32
     Dim found As Long
@@ -5108,7 +5147,7 @@ Public Function IsProcessRunning(ByVal ExeName As String) As Boolean
 
     Do While found <> 0
         sName = GetExeName(proc)
-        If UCase(sName) = UCase(ExeName) Then
+        If UCase(sName) = UCase(exeName) Then
             IsProcessRunning = True
             CloseHandle hSnapshot
             Exit Function
@@ -5276,7 +5315,7 @@ Private Sub Form_Load()
     ExecuteSQL_them_query "DanhSachVatTu", sqqq
 
 
-    LbCty(4).Visible = False
+    lbCty(4).Visible = False
     'If Year(DateTime.Date) < 2018 Then
     'Label3(12).Caption = "§¬n vÞ triÓn khai: Lª V¨n L¸y"
     'Label3(13).Caption = "Sè ®iÖn tho¹i: 093 3415 959"
@@ -5312,14 +5351,14 @@ Public Sub Loadactive()
 
     If counttkinvoice = 1 Then
         Label3(18).Visible = True
-        LbCty(15).Visible = True
+        lbCty(15).Visible = True
         Label3(19).Visible = True
         Label3(20).Visible = True
-        LbCty(16).Visible = True
-        LbCty(17).Visible = True
-        LbCty(15).Caption = SelectSQL("select Url AS f1 from  tbInvoiceInfo")
-        LbCty(16).Caption = SelectSQL("select Username AS f1 from  tbInvoiceInfo")
-        LbCty(17).Caption = SelectSQL("select Password AS f1 from  tbInvoiceInfo")
+        lbCty(16).Visible = True
+        lbCty(17).Visible = True
+        lbCty(15).Caption = SelectSQL("select Url AS f1 from  tbInvoiceInfo")
+        lbCty(16).Caption = SelectSQL("select Username AS f1 from  tbInvoiceInfo")
+        lbCty(17).Caption = SelectSQL("select Password AS f1 from  tbInvoiceInfo")
     End If
     CheckAndCreateTBCpu
     ExecuteSQL5_Themmoi ("ALTER TABLE HoaDon ADD IdNhap text")
@@ -5569,7 +5608,7 @@ End Sub
 
 Private Sub lbCty_Click(Index As Integer)
     Clipboard.Clear
-    Clipboard.SetText LbCty(Index).Caption
+    Clipboard.SetText lbCty(Index).Caption
 End Sub
 
 Public Sub mnCn_Click(Index As Integer)
@@ -5759,9 +5798,9 @@ Private Sub mnDL_Click(Index As Integer)
                 If rs_ktra!Type = 2 Then
                     Dim resultArray() As String
                     resultArray = Split(rs_ktra!Year, "|")
-                    Dim Chk As Integer
-                    Chk = (CInt(resultArray(0)) - 1) + CInt(resultArray(1)) - pNamTC
-                    If Chk <= 0 Then
+                    Dim chk As Integer
+                    chk = (CInt(resultArray(0)) - 1) + CInt(resultArray(1)) - pNamTC
+                    If chk <= 0 Then
                         'MsgBox "Gãi d÷ liÖu theo n¨m ®· hÕt, vui lßng liªn hÖ ®Ó ®­îc chuyÓn sang n¨m míi"
                         Dim s As String
                         s = ChrW(71) & ChrW(243) & ChrW(105) & ChrW(32) & ChrW(100) & ChrW(7919) & ChrW(32) & ChrW(108) & ChrW(105) & ChrW(7879) & ChrW(117) & ChrW(32) & ChrW(116) & ChrW(104) & ChrW(101) & ChrW(111) & ChrW(32) & ChrW(110) & ChrW(259) & ChrW(109) & ChrW(32) & ChrW(273) & ChrW(227) & ChrW(32) & ChrW(104) & ChrW(7871) & ChrW(116) & ChrW(44) & ChrW(32) & ChrW(118) & ChrW(117) & ChrW(105) & ChrW(32) & ChrW(108) & ChrW(242) & ChrW(110) & ChrW(103) & ChrW(32) & ChrW(108) & ChrW(105) & ChrW(234) & ChrW(110) & ChrW(32) & ChrW(104) & ChrW(7879) & ChrW(32) & ChrW(273) & ChrW(7875) & ChrW(32) & ChrW(273) & ChrW(432) & ChrW(7907) & ChrW(99) & ChrW(32) & ChrW(99) & ChrW(104) & ChrW(117) & ChrW(121) & ChrW(7875) & ChrW(110) & ChrW(32) & ChrW(115) & ChrW(97) & ChrW(110) & ChrW(103) & ChrW(32) & ChrW(110) & ChrW(259) & ChrW(109) & ChrW(32) & ChrW(109) & ChrW(7899) & ChrW(105)
@@ -5828,7 +5867,7 @@ Private Sub mnDL_Click(Index As Integer)
 
             HienThongBao "ChuyÓn sè d­ cuèi kú ...  Xin vui lßng chê !", 1
             ChuyenNamMoi
-            LbCty(7).Caption = CStr(pNamTC)
+            lbCty(7).Caption = CStr(pNamTC)
             LietKeNam
         End If
         '            Else
@@ -5852,7 +5891,7 @@ Private Sub mnDL_Click(Index As Integer)
     Case 19: If KtraMKAdmin Then FrmE.Show 1
     Case 21:
         If KtraMKAdmin Then
-            sql = FrmDB.ChonTepLuu(frmMain.LbCty(8).Caption, pNamTC)
+            sql = FrmDB.ChonTepLuu(frmMain.lbCty(8).Caption, pNamTC)
             If Len(sql) > 0 Then
                 CloseUp 1
                 OpenDB sql
@@ -5905,7 +5944,7 @@ MoTep:
             If pDataPath <> GetSetting(IniPath, "Environment", "Path") Then
                 pProcessMode = 0
             Else
-                Select Case UCase(App.ExeName)
+                Select Case UCase(App.exeName)
                 Case "SERVER": pProcessMode = 2
                 Case "CLIENT": pProcessMode = 1
                 Case Else: pProcessMode = 0
@@ -5994,12 +6033,12 @@ X1:
         ChonTenTep "", 0, "", 3
     Case 9:    ' Dat may in
         ChonTenTep "", cdlCFBoth, "", 4
-        If Len(dlgCommonDialog.FontName) > 1 And (LoaiFont(dlgCommonDialog.FontName) = FontFlag Or KiemTraMaSoThue(LbCty(8).Caption, "03")) Then
+        If Len(dlgCommonDialog.FontName) > 1 And (LoaiFont(dlgCommonDialog.FontName) = FontFlag Or KiemTraMaSoThue(lbCty(8).Caption, "03")) Then
             pFontName = dlgCommonDialog.FontName
             pFontSize = dlgCommonDialog.FontSize
             ExecuteSQL5 "UPDATE License SET FontName='" + pFontName + "', FontSize=" + CStr(pFontSize)
-            LbCty(0).FontName = pFontName
-            LbCty(1).FontName = pFontName
+            lbCty(0).FontName = pFontName
+            lbCty(1).FontName = pFontName
             mnHT(10).Caption = IIf(FontFlag <> 2, "ChuyÓn ®æi CSDL sang font ABC", "ChuyÓn ®æi CSDL sang font VNI")
             SetFont Me
         End If
@@ -6026,10 +6065,10 @@ X1:
         FrmMatkhau.tag = 1
         FrmMatkhau.Show 1
     Case 16:
-        If (Not IsNumeric(Left(LbCty(8).Caption, 2))) Then GoTo KT
-        If CInt(Left(LbCty(8).Caption, 3)) = 0 Then GoTo KT
-        If (Len(pMST) > 0 And Left(LbCty(8).Caption, Len(pMST)) = pMST) Then GoTo B
-        If FrmGetStr.GetMK(LbCty(8).Caption) Then
+        If (Not IsNumeric(Left(lbCty(8).Caption, 2))) Then GoTo KT
+        If CInt(Left(lbCty(8).Caption, 3)) = 0 Then GoTo KT
+        If (Len(pMST) > 0 And Left(lbCty(8).Caption, Len(pMST)) = pMST) Then GoTo B
+        If FrmGetStr.GetMK(lbCty(8).Caption) Then
 B:
             UpDateDB
             GetLicense
@@ -6083,7 +6122,7 @@ Private Sub mnNam_Click(Index As Integer)
     Next
     pNamTC = CInt5(mnNam(Index).Caption)
     
-    LbCty(7).Caption = CStr(pNamTC)
+    lbCty(7).Caption = CStr(pNamTC)
     Me.MousePointer = 0
 End Sub
 
@@ -7057,53 +7096,53 @@ Private Sub GetLicense()
     pTenCty = rs_license!tencty
     pTenCn = rs_license!tencn
         
-    LbCty(2).Caption = rs_license!DiaChi
-    LbCty(3).Caption = rs_license!Tel
-    LbCty(4).Caption = rs_license!Fax
-    LbCty(5).Caption = VniToUnicode(rs_license!TaiKhoanVN)
-    LbCty(6).Caption = rs_license!TaiKhoanNT
+    lbCty(2).Caption = rs_license!DiaChi
+    lbCty(3).Caption = rs_license!Tel
+    lbCty(4).Caption = rs_license!Fax
+    lbCty(5).Caption = VniToUnicode(rs_license!TaiKhoanVN)
+    lbCty(6).Caption = rs_license!TaiKhoanNT
     pNamTC = rs_license!NamTC
     pThangDauKy = rs_license!thang
-    LbCty(7).Caption = CStr(pNamTC)
-    LbCty(8).Caption = rs_license!masothue
-    LbCty(13).Caption = rs_license!email
-    LbCty(14).Caption = rs_license!sofax
+    lbCty(7).Caption = CStr(pNamTC)
+    lbCty(8).Caption = rs_license!masothue
+    lbCty(13).Caption = rs_license!email
+    lbCty(14).Caption = rs_license!sofax
     pBaoGia = (rs_license!Flag1 Mod 1000) \ 100
     pNVBH = (rs_license!Flag1 Mod 10000) \ 1000
 
     For i = 5 To 7
         mnCN(i).Visible = (pNVBH > 0)
     Next
-    lb(0).tag = "Model"
+    Lb(0).tag = "Model"
     SetFont Me
     i = (rs_license!Flag1 Mod 1000000000) \ 100000000
-    lb(0).tag = i
+    Lb(0).tag = i
     If (i < 3 Or i = 5) And pVersion = 0 Then ExecuteSQL5 "UPDATE License SET Flag1=400000000+Flag1 Mod 100000000", False
     Select Case i
-    Case 1: lb(1).Caption = "Doanh nghiÖp Nhµ n­íc"
-        lb(0).Caption = "10.1."
-    Case 2: lb(1).Caption = "Cæ phÇn - Liªn doanh"
-        lb(0).Caption = "10.1."
-    Case 3: lb(1).Caption = "C«ng ty TNHH"
-        lb(0).Caption = "10.1"
-    Case 4: lb(1).Caption = "Doanh nghiÖp t­ nh©n"
-        lb(0).Caption = "10.1"
-    Case 5: lb(1).Caption = "C¬ së ®µo t¹o"
-        lb(0).Caption = "10.1"
+    Case 1: Lb(1).Caption = "Doanh nghiÖp Nhµ n­íc"
+        Lb(0).Caption = "10.1."
+    Case 2: Lb(1).Caption = "Cæ phÇn - Liªn doanh"
+        Lb(0).Caption = "10.1."
+    Case 3: Lb(1).Caption = "C«ng ty TNHH"
+        Lb(0).Caption = "10.1"
+    Case 4: Lb(1).Caption = "Doanh nghiÖp t­ nh©n"
+        Lb(0).Caption = "10.1"
+    Case 5: Lb(1).Caption = "C¬ së ®µo t¹o"
+        Lb(0).Caption = "10.1"
     Case 6:
-        lb(1).Caption = "Hµnh chÝnh sù nghiÖp"
-        lb(0).Caption = "10.1"
+        Lb(1).Caption = "Hµnh chÝnh sù nghiÖp"
+        Lb(0).Caption = "10.1"
         Label(24).Visible = False
         Label(25).Visible = False
         Frame(1).Visible = False
     Case Else
-        lb(0).Caption = "10.1"
+        Lb(0).Caption = "10.1"
     End Select
-    If pVersion <> 3 Then lb(0).Caption = lb(0).Caption    ' + IIf((rs_license!Flag1 Mod 100000000) \ 10000000 > 0, "1", "0") + IIf((rs_license!Flag1 Mod 10000000) \ 1000000 > 0, "1", "0") + IIf((rs_license!Flag1 Mod 1000000) \ 100000 > 0, "1", "0") + IIf((rs_license!Flag1 Mod 100000) \ 10000 > 0, "1", "0")
-    Chk(0).Value = (rs_license!Flag1 Mod 100000000) \ 10000000
-    Chk(1).Value = (rs_license!Flag1 Mod 10000000) \ 1000000
-    Chk(2).Value = (rs_license!Flag1 Mod 1000000) \ 100000
-    Chk(3).Value = (rs_license!Flag1 Mod 100000) \ 10000
+    If pVersion <> 3 Then Lb(0).Caption = Lb(0).Caption    ' + IIf((rs_license!Flag1 Mod 100000000) \ 10000000 > 0, "1", "0") + IIf((rs_license!Flag1 Mod 10000000) \ 1000000 > 0, "1", "0") + IIf((rs_license!Flag1 Mod 1000000) \ 100000 > 0, "1", "0") + IIf((rs_license!Flag1 Mod 100000) \ 10000 > 0, "1", "0")
+    chk(0).Value = (rs_license!Flag1 Mod 100000000) \ 10000000
+    chk(1).Value = (rs_license!Flag1 Mod 10000000) \ 1000000
+    chk(2).Value = (rs_license!Flag1 Mod 1000000) \ 100000
+    chk(3).Value = (rs_license!Flag1 Mod 100000) \ 10000
 
     Command(6).Visible = ((rs_license!Flag1 Mod 1000000) \ 100000 > 0)
 
@@ -7150,11 +7189,11 @@ Private Sub GetLicense()
     CTGS_GV = rs_license!CTGS_GV
     pFontName = rs_license!FontName
     pFontSize = rs_license!FontSize
-    LbCty(0).FontName = pFontName
-    LbCty(1).FontName = pFontName
-    LbCty(10).Caption = rs_license!Quan
-    LbCty(11).Caption = rs_license!ThanhPho
-    frmMain.LbCty(9).Caption = rs_license!email
+    lbCty(0).FontName = pFontName
+    lbCty(1).FontName = pFontName
+    lbCty(10).Caption = rs_license!Quan
+    lbCty(11).Caption = rs_license!ThanhPho
+    frmMain.lbCty(9).Caption = rs_license!email
     pSoKT = rs_license!SoKT
     mnDL(13).Visible = (pSoKT Mod 100 >= 10)
     '    mnDL(14).Visible = (pSoKT Mod 100 >= 10)
@@ -7261,9 +7300,9 @@ Private Sub GetLicense()
         pSHPT = "131"
     End If
 
-    LbCty(0).tag = rs_license!TenCty_ID
-    LbCty(0).Caption = pTenCty
-    LbCty(1).Caption = pTenCn
+    lbCty(0).tag = rs_license!TenCty_ID
+    lbCty(0).Caption = pTenCty
+    lbCty(1).Caption = pTenCn
     Frame(0).Visible = pSongNgu
 
     mnXoa(0).tag = 0
@@ -7508,9 +7547,9 @@ Private Function StationList() As Integer
         End If
     Next
     If miLoop > 1 Then
-        LbCty(12).Caption = "C¸c m¸y tr¹m: " + sql
+        lbCty(12).Caption = "C¸c m¸y tr¹m: " + sql
     Else
-        LbCty(12).Caption = ""
+        lbCty(12).Caption = ""
     End If
     
     StationList = miLoop
@@ -7622,4 +7661,27 @@ Private Sub timerChaytb_Timer()
     Else
         MsgBox "L?i khi ghi dè file!", vbExclamation
     End If
+    Sleep 800
+    
+    mPID = GetPIDByName("SaovietTax.exe")
+End Sub
+Private Sub KillProcessByPID(ByVal pid As Long)
+    Dim objWMIService As Object
+    Dim colProcesses As Object
+    Dim objProcess As Object
+    
+    If pid = 0 Then Exit Sub
+    On Error Resume Next
+    
+    Set objWMIService = GetObject("winmgmts:\\.\root\cimv2")
+    Set colProcesses = objWMIService.ExecQuery( _
+        "SELECT * FROM Win32_Process WHERE ProcessId = " & pid)
+    
+    For Each objProcess In colProcesses
+        objProcess.Terminate
+    Next
+    
+    Set objProcess = Nothing
+    Set colProcesses = Nothing
+    Set objWMIService = Nothing
 End Sub

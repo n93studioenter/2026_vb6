@@ -35,6 +35,12 @@ Begin VB.Form FrmChungtu
    Tag             =   "0"
    WhatsThisButton =   -1  'True
    WhatsThisHelp   =   -1  'True
+   Begin VB.Timer timerDochungtu 
+      Enabled         =   0   'False
+      Interval        =   300
+      Left            =   10680
+      Top             =   8520
+   End
    Begin VB.Timer Timer6 
       Enabled         =   0   'False
       Left            =   1920
@@ -68,7 +74,7 @@ Begin VB.Form FrmChungtu
       Caption         =   "Dß CT bank"
       Height          =   375
       Index           =   1
-      Left            =   11750
+      Left            =   11400
       TabIndex        =   196
       Top             =   8400
       Visible         =   0   'False
@@ -5227,7 +5233,8 @@ Private Sub Command10_Click(Index As Integer)
 
         ' Shell d? m? ?ng d?ng
         Shell exePath, vbNormalFocus
-
+        ExecuteSQL5 ("UPDATE tbResponse SET Status = 0")
+        timerDochungtu.Enabled = True
         Exit Sub
         DoEvents  ' Ð? d?m b?o ?ng d?ng có th?i gian kh?i d?ng
 
@@ -5247,6 +5254,7 @@ Private Sub Command10_Click(Index As Integer)
             Sleep 1000
             CheckWindow
         End If
+
     End If
 End Sub
 Private Sub Dohoadon()
@@ -6264,6 +6272,90 @@ Private Sub timerauto_Timer()
     btnImportXML_Click
 End Sub
 
+Private Sub timerDochungtu_Timer()
+    timerDochungtu.Enabled = False
+    Kiemtradochungtu
+End Sub
+Private Function DocFile(ByVal DuongDan As String) As String
+    Dim soFile As Integer
+    Dim noiDung As String
+    Dim dong As String
+    
+    ' Ki?m tra file có t?n t?i không
+    If Dir(DuongDan) = "" Then
+        DocFile = ""
+        Exit Function
+    End If
+    
+    On Error GoTo XuLyLoi
+    
+    soFile = FreeFile
+    Open DuongDan For Input As #soFile
+    
+    Do Until EOF(soFile)
+        Line Input #soFile, dong
+        If Len(noiDung) > 0 Then
+            noiDung = noiDung & vbCrLf & dong
+        Else
+            noiDung = dong
+        End If
+    Loop
+    TachHoaDon noiDung
+    Close #soFile
+    DocFile = noiDung
+    Exit Function
+    
+XuLyLoi:
+    If soFile > 0 Then Close #soFile
+    DocFile = ""
+End Function
+Private Sub TachHoaDon(ByVal s As String)
+    Dim arr() As String
+    Dim sohd As String
+    Dim ngay As String
+
+    arr = Split(s, "_")
+
+    If UBound(arr) >= 1 Then
+        sohd = arr(0)      ' "1825"
+        ngay = arr(1)      ' "01/09/26"
+    End If
+
+    FrmDsCT.ChkLoai(1).Value = 1
+    FrmDsCT.ChkLoai(8).Value = 1
+    FrmDsCT.ChkTaikhoan(5).Value = 1
+    FrmDsCT.txtShTk(4).Text = sohd
+    FrmDsCT.OptLK(1).Value = 1
+    FrmDsCT.MedNgay(0).Text = ngay
+    FrmDsCT.MedNgay(1).Text = ngay
+    FrmDsCT.statushd = 1
+    FrmDsCT.Ngayhd = ngay
+    FrmDsCT.Show vbModal
+    Debug.Print "So hoa don: " & sohd
+
+    Grid2.SelStartRow = 1
+    Grid2.SelEndRow = 1
+    Grid2.SelStartCol = 0
+    Grid2.SelEndCol = Grid2.Cols - 1
+    Grid2_Click
+    FrmDsCT.statushd = 0
+    ExecuteSQL5 ("UPDATE tbResponse SET Status = 0")
+    timerDochungtu.Enabled = True
+    Debug.Print "Ngay: " & ngay
+End Sub
+Private Sub Kiemtradochungtu()
+    Dim responestatus As Integer
+
+    responestatus = SelectSQL("SELECT Status AS F1 FROM tbResponse ", 0)
+    If responestatus = 1 Then
+        Dim s As String
+        s = DocFile(App.path & "\\HoaDon\\invoice.txt")
+         
+    Else
+        timerDochungtu.Enabled = True
+    End If
+
+End Sub
 Private Sub timerReadyNKNL_Timer()
     timerReadyNKNL.Enabled = False
     OptLoai(2).Value = True
@@ -11372,9 +11464,9 @@ Private Sub Command5_Click()
                 End If
             End If
 
-            Dim URL As String
-            URL = App.path & "\HoaDon\HdNhap\" & idnhap & ".pdf"
-            Shell "rundll32.exe url.dll,FileProtocolHandler " & URL, vbNormalFocus
+            Dim url As String
+            url = App.path & "\HoaDon\HdNhap\" & idnhap & ".pdf"
+            Shell "rundll32.exe url.dll,FileProtocolHandler " & url, vbNormalFocus
 
             rsport.Close
             Set rsport = Nothing

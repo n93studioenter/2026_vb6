@@ -6,7 +6,7 @@ Begin VB.Form FrmDsCT
    BackColor       =   &H00FFFFC0&
    BorderStyle     =   0  'None
    Caption         =   "T×m"
-   ClientHeight    =   5250
+   ClientHeight    =   5625
    ClientLeft      =   5280
    ClientTop       =   1290
    ClientWidth     =   9105
@@ -17,7 +17,7 @@ Begin VB.Form FrmDsCT
    MaxButton       =   0   'False
    MinButton       =   0   'False
    PaletteMode     =   1  'UseZOrder
-   ScaleHeight     =   5250
+   ScaleHeight     =   5625
    ScaleWidth      =   9105
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
@@ -1517,7 +1517,8 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-
+Public statushd As Integer
+Public Ngayhd As String
 Dim MaCTChon As Long
 Dim LietKe As Boolean
 Dim Row As Integer
@@ -1571,91 +1572,90 @@ End Sub
 ' LiÖt kª, Chän chøng tõ
 '======================================================================================
 Public Sub Command_Click(Index As Integer)
+    If OptLK(0).Value = False Then
+        If IsDate(MedNgay(0).Text) And IsDate(MedNgay(1).Text) Then
+            If CDate(MedNgay(1).Text) < CDate(MedNgay(0).Text) Then
+                MedNgay(1).Text = MedNgay(0).Text
 
-If OptLK(0).Value = False Then
-  If IsDate(MedNgay(0).Text) And IsDate(MedNgay(1).Text) Then
-        If CDate(MedNgay(1).Text) < CDate(MedNgay(0).Text) Then
-            MedNgay(1).Text = MedNgay(0).Text
-       
+            End If
         End If
-  End If
-  Else
-   If IsDate(CboThang(0).Text) And IsDate(CboThang(1).Text) Then
-        If CDate(CboThang(1).Text) < CDate(CboThang(0).Text) Then
-            CboThang(1).Text = CboThang(0).Text
+    Else
+        If IsDate(CboThang(0).Text) And IsDate(CboThang(1).Text) Then
+            If CDate(CboThang(1).Text) < CDate(CboThang(0).Text) Then
+                CboThang(1).Text = CboThang(0).Text
+            End If
         End If
-  End If
-  End If
-    
-    
+    End If
+
+
     Select Case Index
-        Case 0:
-            If ChkTaikhoan(0).Value = 1 And txtShTk(0).tag = 0 Then
-                ErrMsg er_SHTaiKhoan1
-                RFocus txtShTk(0)
-                Exit Sub
-            End If
-            If ChkTaikhoan(1).Value = 1 And txtShTk(1).tag = 0 Then
-                ErrMsg er_SHVattu
-                RFocus txtShTk(1)
-                Exit Sub
-            End If
-            If ChkTaikhoan(2).Value = 1 And txtShTk(2).tag = 0 Then
-                ErrMsg er_SHTaiSan
-                RFocus txtShTk(2)
-                Exit Sub
-            End If
-            If ChkTaikhoan(3).Value = 1 And txtShTk(3).tag = 0 Then
-                ErrMsg er_SHKhachHang
-                RFocus txtShTk(3)
-                Exit Sub
-            End If
-            If ChkTaikhoan(5).Value = 1 And Len(txtShTk(4).Text) = 0 Then
-                MsgBox "ThiÕu sè ho¸ ®¬n !", vbExclamation, App.ProductName
-                RFocus txtShTk(4)
-                Exit Sub
-            End If
-            If CboThang(1).ListIndex < CboThang(0).ListIndex Then CboThang(1).ListIndex = CboThang(0).ListIndex
-            LietKeChungtu IIf(ChkTaikhoan(0).Value = 1, txtShTk(0).Text, ""), IIf(ChkTaikhoan(1).Value = 1, txtShTk(1).tag, 0), IIf(ChkTaikhoan(2).Value = 1, txtShTk(2).tag, 0), IIf(ChkTaikhoan(3).Value = 1, txtShTk(3).tag, 0), IIf(ChkTaikhoan(5).Value = 1, txtShTk(4).Text, "")
-'             GrdChungtu.col = 5
-'            If Len(GrdChungtu.Text) = 0 Then Exit Sub
-'            MaCTChon = CLng5(GrdChungtu.Text)
-'            LietKe = True
-'           Unload Me
+    Case 0:
+        If ChkTaikhoan(0).Value = 1 And txtShTk(0).tag = 0 Then
+            ErrMsg er_SHTaiKhoan1
+            RFocus txtShTk(0)
+            Exit Sub
+        End If
+        If ChkTaikhoan(1).Value = 1 And txtShTk(1).tag = 0 Then
+            ErrMsg er_SHVattu
+            RFocus txtShTk(1)
+            Exit Sub
+        End If
+        If ChkTaikhoan(2).Value = 1 And txtShTk(2).tag = 0 Then
+            ErrMsg er_SHTaiSan
+            RFocus txtShTk(2)
+            Exit Sub
+        End If
+        If ChkTaikhoan(3).Value = 1 And txtShTk(3).tag = 0 Then
+            ErrMsg er_SHKhachHang
+            RFocus txtShTk(3)
+            Exit Sub
+        End If
+        If ChkTaikhoan(5).Value = 1 And Len(txtShTk(4).Text) = 0 Then
+            MsgBox "ThiÕu sè ho¸ ®¬n !", vbExclamation, App.ProductName
+            RFocus txtShTk(4)
+            Exit Sub
+        End If
+        If CboThang(1).ListIndex < CboThang(0).ListIndex Then CboThang(1).ListIndex = CboThang(0).ListIndex
+        LietKeChungtu IIf(ChkTaikhoan(0).Value = 1, txtShTk(0).Text, ""), IIf(ChkTaikhoan(1).Value = 1, txtShTk(1).tag, 0), IIf(ChkTaikhoan(2).Value = 1, txtShTk(2).tag, 0), IIf(ChkTaikhoan(3).Value = 1, txtShTk(3).tag, 0), IIf(ChkTaikhoan(5).Value = 1, txtShTk(4).Text, "")
+        '             GrdChungtu.col = 5
+        '            If Len(GrdChungtu.Text) = 0 Then Exit Sub
+        '            MaCTChon = CLng5(GrdChungtu.Text)
+        '            LietKe = True
+        '           Unload Me
 
-        Case 1:
-            GrdChungtu.col = 5
-            If Len(GrdChungtu.Text) = 0 Then Exit Sub
-            MaCTChon = CLng5(GrdChungtu.Text)
-            Hide
-            LietKe = True
-        Case 2:
-            MaCTChon = 0
-            Hide
-            LietKe = True
-        Case 3, 4:            DSCTu Index - 3
-        Case 5:
-            Dim f As Form, ms As Long, i As Integer
-            Set f = New FrmChungtu
-            Load f
-            With GrdChungtu
-                .col = 5
-                For i = .SelStartRow To .SelEndRow
-                    .Row = i
-                    ms = CLng5(.Text)
-                    If ms > 0 Then
-                        pPhieu = 0
-                        f.VaoSoNK CLng5(GrdChungtu.Text)
-                    End If
-                Next
-            End With
-            Set f = Nothing
-            pPhieu = 1
-            Command_Click 0
+    Case 1:
+        GrdChungtu.col = 5
+        If Len(GrdChungtu.Text) = 0 Then Exit Sub
+        MaCTChon = CLng5(GrdChungtu.Text)
+        Hide
+        LietKe = True
+    Case 2:
+        MaCTChon = 0
+        Hide
+        LietKe = True
+    Case 3, 4: DSCTu Index - 3
+    Case 5:
+        Dim f As Form, ms As Long, i As Integer
+        Set f = New FrmChungtu
+        Load f
+        With GrdChungtu
+            .col = 5
+            For i = .SelStartRow To .SelEndRow
+                .Row = i
+                ms = CLng5(.Text)
+                If ms > 0 Then
+                    pPhieu = 0
+                    f.VaoSoNK CLng5(GrdChungtu.Text)
+                End If
+            Next
+        End With
+        Set f = Nothing
+        pPhieu = 1
+        Command_Click 0
     End Select
     If GrdChungtu.Rows > 1 Then
-  GrdChungtu.RemoveItem (0)
-  End If
+        GrdChungtu.RemoveItem (0)
+    End If
 End Sub
 '======================================================================================
 ' HiÖn cöa sæ chän tµi kho¶n
@@ -1720,15 +1720,21 @@ End Sub
 Private Sub Form_Activate()
     If LietKe Then
         'Me.Refresh
-       ' Command_Click 0
+        ' Command_Click 0
         LietKe = False
     End If
     KiemTraUser
-     Dim ngaytt As Date
- ngaytt = "01/01/" + Mid(str(pNamTC), 4, 5)
- MedNgay(0).Text = ngaytt
- MedNgay(1).Text = ngaytt
-
+    Dim ngaytt As Date
+    ngaytt = "01/01/" + Mid(str(pNamTC), 4, 5)
+    If statushd <> 1 Then
+        MedNgay(0).Text = ngaytt
+        MedNgay(1).Text = ngaytt
+    Else
+        OptLK(1).Value = 1
+        MedNgay(0).Text = "01/09/26"
+        MedNgay(1).Text = "01/09/26"
+        Command_Click 0
+    End If
 End Sub
 
 Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
@@ -2022,7 +2028,11 @@ Public Sub LietKeChungtu(shtk As String, mvt As Long, mts As Long, mcn As Long, 
     If OptLK(0).Value Then
         sql = sql + WThang("ThangCT", CboThang(0).ItemData(CboThang(0).ListIndex), CboThang(1).ItemData(CboThang(1).ListIndex)) + IIf(pProcessMode = 1, " AND XuLy<2", "") + " GROUP BY MaCT"
     Else
-        sql = sql + WNgay("NgayGS", ngay(0), ngay(1)) + IIf(pProcessMode = 1, " AND XuLy<2", "") + " GROUP BY MaCT"
+        If statushd <> 1 Then
+            sql = sql + WNgay("NgayGS", ngay(0), ngay(1)) + IIf(pProcessMode = 1, " AND XuLy<2", "") + " GROUP BY MaCT"
+        Else
+            sql = sql + WNgay("NgayGS", DateValue(Ngayhd), DateValue(Ngayhd)) + IIf(pProcessMode = 1, " AND XuLy<2", "") + " GROUP BY MaCT"
+        End If
     End If
     SetSQL "MienTru", sql
 
