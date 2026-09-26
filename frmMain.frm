@@ -229,7 +229,7 @@ Begin VB.Form frmMain
          EndProperty
          BeginProperty Panel4 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
             Style           =   6
-            TextSave        =   "25/09/26"
+            TextSave        =   "26/09/26"
             Key             =   ""
             Object.Tag             =   ""
          EndProperty
@@ -3192,8 +3192,8 @@ Public Sub Taifilecapnhat()
         ProgressBar1.Value = i
         DoEvents
     Next i
-    Dim result As Long
-    result = ShellExecute(0, "open", destFile, "", DestFolder, 0)
+    Dim Result As Long
+    Result = ShellExecute(0, "open", destFile, "", DestFolder, 0)
 ErrorHandler:
     'MsgBox "L?i khi t?i file update.exe:" & vbCrLf & Err.Description, vbCritical
     ProgressBar1.Value = 100
@@ -3202,13 +3202,18 @@ End Sub
 
 
 
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+    KillProcessByPID mPID
+
+End Sub
+
 Private Sub Image1_Click()
     ChayTb
 End Sub
 Private Function GetPIDByName(ByVal exeName As String) As Long
     Dim hSnap As Long
     Dim pe As PROCESSENTRY32
-    Dim result As Long
+    Dim Result As Long
     Dim pid As Long
     
     pid = 0
@@ -3216,16 +3221,16 @@ Private Function GetPIDByName(ByVal exeName As String) As Long
     
     If hSnap <> INVALID_HANDLE_VALUE Then
         pe.dwSize = Len(pe)
-        result = Process32First(hSnap, pe)
+        Result = Process32First(hSnap, pe)
         
-        Do While result <> 0
+        Do While Result <> 0
             If InStr(1, pe.szExeFile, Chr(0)) > 0 Then
                 If LCase(Left$(pe.szExeFile, InStr(1, pe.szExeFile, Chr(0)) - 1)) = LCase(exeName) Then
                     pid = pe.th32ProcessID
                     Exit Do
                 End If
             End If
-            result = Process32Next(hSnap, pe)
+            Result = Process32Next(hSnap, pe)
         Loop
         
         CloseHandle hSnap
@@ -3269,7 +3274,9 @@ Public Sub Chayngam()
     End If
 End Sub
 Public Sub ChayTb()
-    timerChaytb.Enabled = True
+    If modStatic = 1 Then
+        timerChaytb.Enabled = True
+    End If
 End Sub
 
 
@@ -3878,7 +3885,7 @@ Private Sub KiemtraversionDrive()
     zipPath = extractFolder & "\" & fileName  ' D:\DA3\DA3\Tools\Debug\VietstarDriver.zip
     Dim retryCount As Integer
     Dim downloadUrl As String
-    Dim result As Long
+    Dim Result As Long
     ' Xóa file cu
     If Dir(zipPath) <> "" Then Kill zipPath
 
@@ -3892,13 +3899,13 @@ Private Sub KiemtraversionDrive()
     ' Result = URLDownloadToFile(0, urls(0), zipPath, 0, 0)
     If DownloadFileWithTimeout("https://drive.google.com/uc?export=download&id=" & fileId, App.path & "\file.zip", 5) Then
         MsgBox "T?i thành công!"
-        result = 0
+        Result = 0
     Else
         MsgBox "Loi khong the cap nhat version moi"
         Exit Sub
     End If
 
-    If result = 0 Then
+    If Result = 0 Then
         success = True
     Else
         success = False
@@ -4220,7 +4227,7 @@ Private Sub DownloadAndRun()
     Dim extractFolder As String
     Dim exePath As String
     Dim downloadUrl As String
-    Dim result As Long
+    Dim Result As Long
     Dim retryCount As Integer
 
     ' ===== THI?T L?P ÐU?NG D?N =====
@@ -4250,9 +4257,9 @@ Private Sub DownloadAndRun()
 
     For retryCount = 0 To 2
         downloadUrl = urls(retryCount)
-        result = URLDownloadToFile(0, downloadUrl, zipPath, 0, 0)
+        Result = URLDownloadToFile(0, downloadUrl, zipPath, 0, 0)
 
-        If result = 0 Then
+        If Result = 0 Then
             If FileLen(zipPath) > 1024 Then
                 success = True
                 Exit For
@@ -4294,7 +4301,7 @@ Private Sub UnzipFile(zipPath As String, extractFolder As String)
 
     Dim cmd As String
     Dim wsh As Object
-    Dim result As Long
+    Dim Result As Long
 
 
     ' Ki?m tra file ZIP
@@ -4325,10 +4332,10 @@ Private Sub UnzipFile(zipPath As String, extractFolder As String)
 
     ' 0 = ?n c?a s?
     ' True = CH? PowerShell ch?y xong
-    result = wsh.Run(cmd, 0, True)
+    Result = wsh.Run(cmd, 0, True)
 
-    If result <> 0 Then
-        MsgBox "Gi?i nén th?t b?i. Mã l?i: " & result, vbExclamation
+    If Result <> 0 Then
+        MsgBox "Gi?i nén th?t b?i. Mã l?i: " & Result, vbExclamation
         Exit Sub
     End If
 

@@ -7,10 +7,10 @@ Begin VB.Form FThuChi
    BackColor       =   &H80000005&
    BorderStyle     =   0  'None
    Caption         =   "Th«ng tin vÒ phiÕu thu - chi"
-   ClientHeight    =   4500
+   ClientHeight    =   3585
    ClientLeft      =   3735
    ClientTop       =   3720
-   ClientWidth     =   7770
+   ClientWidth     =   7905
    ClipControls    =   0   'False
    ControlBox      =   0   'False
    BeginProperty Font 
@@ -27,8 +27,8 @@ Begin VB.Form FThuChi
    LinkTopic       =   "Additional Voucher Information"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4500
-   ScaleWidth      =   7770
+   ScaleHeight     =   3585
+   ScaleWidth      =   7905
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Tag             =   "0"
@@ -568,11 +568,15 @@ Private Const INFINITE = &HFFFF
 Dim hWndApp As Long
 Private Declare Function IsWindow Lib "user32" (ByVal hwnd As Long) As Long
 Private Declare Sub Sleep Lib "Kernel32" (ByVal dwMilliseconds As Long)
-Private Declare Function FindWindow Lib "user32" Alias "FindWindowA" _
-                                    ()
+Private Declare Function FindWindow Lib "user32" Alias "FindWindowA" ( _
+                                    ByVal lpClassName As String, _
+                                    ByVal lpWindowName As String) As Long
+'Private Declare Function FindWindow Lib "user32" Alias "FindWindowA" _
+ ()
 Public FThuChiForm As Integer
 Dim s(0 To 3) As String
 Dim kh As New ClsKhachHang
+'Dim kh As ClsKhachHang
 Dim ngay As Date
 Dim f1 As Integer
 
@@ -587,7 +591,11 @@ Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" ( 
 Private Const SW_NORMAL = 1
 Private Const SW_HIDE = 0
 Private typeGhichu As Integer
-
+Private Sub InitKh()
+    If kh Is Nothing Then
+        Set kh = New ClsKhachHang
+    End If
+End Sub
 Public Sub RunExeViaWScript(ByVal exePath As String)
     Dim vbsPath As String
     Dim fnum As Integer
@@ -626,7 +634,8 @@ Public Sub Test()
     Unload Me
 End Sub
 Private Sub Timer1_Timer()
-    Unload Me ' Ðóng form sau khi Timer h?t th?i gian
+    MsgBox "timer1"
+    Unload Me    ' Ðóng form sau khi Timer h?t th?i gian
 End Sub
 
 Public Sub SaveGetPhieu()
@@ -1167,6 +1176,7 @@ Private Sub Command2_Click()
 End Sub
 
 Private Sub Form_Activate()
+   
     If FThuChi.FThuChiForm = 5 Then
         Unload Me
     End If
@@ -1217,7 +1227,6 @@ Private Sub Form_Activate()
     ComboBox1.AddItem ("Coâng nôï")
     ComboBox1.AddItem ("TM/CK")
 
-
     Dim sql As String
     Dim rs_chungtu As Recordset
     sql = "SELECT iif(Nguoimuahang is null ,'...',Nguoimuahang) as aa1,"
@@ -1253,6 +1262,7 @@ Private Sub lblTitle_MouseDown(Index As Integer, Button As Integer, Shift As Int
     picFakeTitle_MouseDown Button, Shift, X, Y
 End Sub
 Private Sub Form_Load()
+    
     On Error GoTo ErrHandler
 
     Dim urlname As String
@@ -1284,12 +1294,12 @@ Private Sub Form_Load()
     End If
 
     Set rsports = DBKetoan.OpenRecordset( _
-        "select IdNhap AS f1, HoaDon.MaSo, HoaDon.TendoHDid, HoaDon.ThanhTien " & _
-        "FROM HoaDon " & _
-        "inner join ChungTu on HoaDon.MaSo = ChungTu.MaSo " & _
-        "where ChungTu.SoHieu = '" & FrmChungtu.txt(0).Text & "' " & _
-        "and HoaDon.KyHieu = '" & FrmChungtu.txtVT(1).Text & "' " & _
-        "and ChungTu.NgayCT = #" & sNgay & "#", dbOpenSnapshot)
+                  "select IdNhap AS f1, HoaDon.MaSo, HoaDon.TendoHDid, HoaDon.ThanhTien " & _
+                  "FROM HoaDon " & _
+                  "inner join ChungTu on HoaDon.MaSo = ChungTu.MaSo " & _
+                  "where ChungTu.SoHieu = '" & FrmChungtu.txt(0).Text & "' " & _
+                  "and HoaDon.KyHieu = '" & FrmChungtu.txtVT(1).Text & "' " & _
+                  "and ChungTu.NgayCT = #" & sNgay & "#", dbOpenSnapshot)
 
     If Not rsports.EOF Then
         MaSoHd = rsports!MaSo
@@ -1323,7 +1333,7 @@ Private Sub Form_Load()
         Label2.Visible = True
 
         Set rstemplate = DBKetoan.OpenRecordset( _
-            "SELECT DISTINCTROW tbInvoiceTemplate.* FROM tbInvoiceTemplate", dbOpenSnapshot)
+                         "SELECT DISTINCTROW tbInvoiceTemplate.* FROM tbInvoiceTemplate", dbOpenSnapshot)
 
         If Not rstemplate.EOF Then
             Combo1.Text = rstemplate!code & "-" & UnicodeToVni(rstemplate!Name)
@@ -1332,7 +1342,7 @@ Private Sub Form_Load()
         rstemplate.Close
         Set rstemplate = Nothing
     End If
-
+    
     '============================================================
     ' 4. Ki?m tra tbInvoiceInfo và ghi file version
     '============================================================
@@ -1374,20 +1384,20 @@ Private Sub Form_Load()
 
         ' Phân lo?i theo Url
         Select Case urlname
-            Case "vinvoice.viettel.vn"
-                typeGhichu = 5
-                GhiChutxt 5
-            Case "van.ehoadon.vn"
-                typeGhichu = 6
-                GhiChutxt 6
-            Case "id-v2.tendoo.vn"
-                typeGhichu = 7
-                GhiChutxt 7
-            Case "seller-v2.tendoo.vn"
-                typeGhichu = 8
-                GhiChutxt 8
-            Case Else
-                MsgBox "Url khác: " & urlname
+        Case "vinvoice.viettel.vn"
+            typeGhichu = 5
+            GhiChutxt 5
+        Case "van.ehoadon.vn"
+            typeGhichu = 6
+            GhiChutxt 6
+        Case "id-v2.tendoo.vn"
+            typeGhichu = 7
+            GhiChutxt 7
+        Case "seller-v2.tendoo.vn"
+            typeGhichu = 8
+            GhiChutxt 8
+        Case Else
+            MsgBox "Url khác: " & urlname
         End Select
 
         ' Kh?i d?ng SaovietTax n?u c?n
@@ -1401,14 +1411,14 @@ Private Sub Form_Load()
             CheckWindow
         End If
     End If
-
+    
     '============================================================
     ' 5. N?p danh sách Combo1 (FThuChiForm = 0 và Viettel)
     '============================================================
     If FThuChiForm = 0 And typeGhichu = 5 Then
 
         Set rsinvoice = DBKetoan.OpenRecordset( _
-            "SELECT * FROM tbInvoiceInfo", dbOpenSnapshot)
+                        "SELECT * FROM tbInvoiceInfo", dbOpenSnapshot)
 
         Dim skipBlock As Boolean
         skipBlock = False
@@ -1443,8 +1453,8 @@ Private Sub Form_Load()
                 End If
 
                 Set rsport = DBKetoan.OpenRecordset( _
-                    "SELECT DISTINCTROW tbInvoiceTemplate.* FROM tbInvoiceTemplate", _
-                    dbOpenSnapshot)
+                             "SELECT DISTINCTROW tbInvoiceTemplate.* FROM tbInvoiceTemplate", _
+                             dbOpenSnapshot)
 
                 If Not rsport.EOF Then
                     hasData = True
@@ -1467,8 +1477,8 @@ Private Sub Form_Load()
 
                     ' Ki?m tra hóa dõn d? ch?n template m?c d?nh
                     Set rshd = DBKetoan.OpenRecordset( _
-                        "SELECT * FROM HoaDon WHERE IdTemplate ='" & rsport!id & "'", _
-                        dbOpenSnapshot)
+                               "SELECT * FROM HoaDon WHERE IdTemplate ='" & rsport!id & "'", _
+                               dbOpenSnapshot)
 
                     If Not rshd.EOF Then
                         Combo1.Text = rsport!code & "-" & UnicodeToVni(rsport!Name)
@@ -1496,11 +1506,12 @@ Private Sub Form_Load()
 
         End If
     End If
-
+   
     '============================================================
     ' 6. Kh?i t?o giao di?n
     '============================================================
 T:
+   
     lblTitle(11).AutoSize = True
     Me.Height = Me.Height + 350 + 10
     picFakeTitle.Width = Me.ScaleWidth
@@ -1517,7 +1528,6 @@ T:
         s(i) = "..."
     Next
     ngay = CVDate("01/01/1900")
-
     SetFont Me
 
     Exit Sub
@@ -1537,7 +1547,7 @@ ErrHandler:
     Set rshd = Nothing
     On Error GoTo 0
 
-    MsgBox "L?i Form_Load: " & Err.number & vbCrLf & _
+    'MsgBox "L?i Form_Load: " & Err.number & vbCrLf & _
            "Mô t?:" & Err.Description & vbCrLf & _
            "Ngu?n:" & Err.Source, vbCritical, "L?i"
 End Sub
@@ -1551,50 +1561,147 @@ Private Sub T_LostFocus(Index As Integer)
 End Sub
 
 Public Sub GetPhieu(s1 As String, s2 As String, s3 As String, makh As Long, Optional d As Date, Optional s4 As String)
+    On Error GoTo ErrHandler
+    
+    ' Kh?i t?o kh an toàn
+    If kh Is Nothing Then Set kh = New ClsKhachHang
     kh.InitKhachHangMaSo makh
-    'Lay danh sach get phieu
     
     Dim getmact As Double
-    getmact = SelectSQL("select MaCT AS f1 from ChungTu where MaSo = " & MaSoHd & "")
+    getmact = SelectSQL("select MaCT AS f1 from ChungTu where MaSo = " & MaSoHd)
     
     Dim rsports As Recordset
+    Set rsports = Nothing
+    
+    ' M? recordset an toàn
+    On Error Resume Next
     Set rsports = DBKetoan.OpenRecordset("select * from tbGetphieu where MaCT = '" & getmact & "'", dbOpenSnapshot)
-    If Not rsports.EOF And MaSoHd <> 0 Then
-        T(5).Text = rsports!CCCD
-        T(0).Text = rsports!tencty
-        txtTencongty.Text = VniToUnicode(rsports!tencty)
-        T(4).Text = rsports!TenNM
-        txtTennguoinoptien.Text = VniToUnicode(rsports!TenNM)
-        T(1).Text = rsports!DiaChi
-    Else
-        T(0).Text = s1
-        txtTencongty.Text = VniToUnicode(s1)
-        T(1).Text = s2
-        If txtTennguoinoptien.Text = "" Then txtTennguoinoptien.Text = "..."
-
-        T(2).Text = s3
-        T(2).Text = FrmChungtu.txt(0).Text
-        T(3).Text = s4
+    If Err.number <> 0 Then
+        MsgBox "L?i OpenRecordset: " & Err.number & " - " & Err.Description
+        Err.Clear
+        GoTo NoData
     End If
-
+    On Error GoTo ErrHandler
+    
+    If Not rsports Is Nothing Then
+        If Not rsports.EOF And MaSoHd <> 0 Then
+            ' Có d? li?u ? gán t? recordset
+            On Error Resume Next
+            T(5).Text = rsports!CCCD & ""
+            T(0).Text = rsports!tencty & ""
+            txtTencongty.Text = VniToUnicode(rsports!tencty & "")
+            T(4).Text = rsports!TenNM & ""
+            txtTennguoinoptien.Text = VniToUnicode(rsports!TenNM & "")
+            T(1).Text = rsports!DiaChi & ""
+            
+            If Err.number <> 0 Then
+                MsgBox "L?i gán t? recordset: " & Err.number & " - " & Err.Description
+                Err.Clear
+            End If
+            On Error GoTo ErrHandler
+        Else
+            GoTo NoData
+        End If
+    Else
+NoData:
+        ' Không có d? li?u ? gán t? tham s?
+        On Error Resume Next
+        
+        T(0).Text = s1
+        If Err.number <> 0 Then
+            MsgBox "L?i T(0): " & Err.number & " - " & Err.Description
+            Err.Clear
+        End If
+        
+        txtTencongty.Text = VniToUnicode(s1)
+        If Err.number <> 0 Then
+            MsgBox "L?i txtTencongty: " & Err.number & " - " & Err.Description
+            Err.Clear
+        End If
+        
+        T(1).Text = s2
+        If Err.number <> 0 Then
+            MsgBox "L?i T(1): " & Err.number & " - " & Err.Description
+            Err.Clear
+        End If
+        
+        If txtTennguoinoptien.Text = "" Then txtTennguoinoptien.Text = "..."
+        If Err.number <> 0 Then
+            MsgBox "L?i txtTennguoinoptien: " & Err.number & " - " & Err.Description
+            Err.Clear
+        End If
+        
+        T(2).Text = s3
+        If Err.number <> 0 Then
+            MsgBox "L?i T(2) = s3: " & Err.number & " - " & Err.Description
+            Err.Clear
+        End If
+        
+        ' Dòng này hay gây l?i disconnected
+        T(2).Text = FrmChungtu.txt(0).Text
+        If Err.number <> 0 Then
+            MsgBox "L?i FrmChungtu.txt(0): " & Err.number & " - " & Err.Description
+            Err.Clear
+        End If
+        
+        T(3).Text = s4
+        If Err.number <> 0 Then
+            MsgBox "L?i T(3): " & Err.number & " - " & Err.Description
+            Err.Clear
+        End If
+        
+        On Error GoTo ErrHandler
+    End If
+    
+    ' Gi?i phóng recordset
+    On Error Resume Next
+    If Not rsports Is Nothing Then
+        rsports.Close
+        Set rsports = Nothing
+    End If
+    On Error GoTo ErrHandler
+    
+    ' Gán thông tin khách hàng
+    On Error Resume Next
     txtshkh.Text = kh.sohieu
     lbkh.Caption = kh.Ten
+    If Err.number <> 0 Then
+        MsgBox "L?i gán kh: " & Err.number & " - " & Err.Description
+        Err.Clear
+    End If
+    On Error GoTo ErrHandler
+    
     ngay = d
     If Year(d) > 1900 Then MedNgay.Text = Format(d, Mask_D)
+    
+    ' Hi?n form
     If Not Me.Visible Then
         Me.Show vbModal
     End If
+    
+    ' Tr? giá tr? ngu?c l?i
     s1 = s(0)
     s2 = s(1)
     s3 = s(2)
     s4 = s(3)
     makh = kh.MaSo
     d = ngay
+    
     Set kh = Nothing
+    
     If FThuChiForm = 1 Then
         Command_Click
     End If
-
+    
+    Exit Sub
+    
+ErrHandler:
+    MsgBox "L?i GetPhieu: " & Err.number & vbCrLf & Err.Description, vbCritical
+    On Error Resume Next
+    If Not rsports Is Nothing Then
+        rsports.Close
+        Set rsports = Nothing
+    End If
 End Sub
 
 Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
