@@ -5063,7 +5063,7 @@ Private Sub XylyHoaDonTong(ByRef rs_import As Recordset)
             End If
         Else
             ' Recordset r?ng
-            frmThongbao.thongbao "Da xu ly xong dau vao"
+            frmThongbao.Thongbao "Da xu ly xong dau vao"
         End If
     End If
     If sttHD < totals Then
@@ -6131,7 +6131,7 @@ End Sub
 Private Function StringToUTF8(str As String) As Byte()
     Dim buffer() As Byte
     Dim bufferSize As Long
-    Dim result As Long
+    Dim Result As Long
 
     ' L?y kích thu?c buffer c?n thi?t
     bufferSize = WideCharToMultiByte(CP_UTF8, 0, StrPtr(str), Len(str), 0, 0, 0, 0)
@@ -6140,9 +6140,9 @@ Private Function StringToUTF8(str As String) As Byte()
         ReDim buffer(bufferSize - 1)
 
         ' Chuy?n d?i sang UTF-8
-        result = WideCharToMultiByte(CP_UTF8, 0, StrPtr(str), Len(str), VarPtr(buffer(0)), bufferSize, 0, 0)
+        Result = WideCharToMultiByte(CP_UTF8, 0, StrPtr(str), Len(str), VarPtr(buffer(0)), bufferSize, 0, 0)
 
-        If result > 0 Then
+        If Result > 0 Then
             StringToUTF8 = buffer
         End If
     End If
@@ -7413,7 +7413,7 @@ Public Sub btnImportXML_Click()
         Close #FileNum
     End If
 
-    frmThongbao.thongbao "Dang import hoa don"
+    frmThongbao.Thongbao "Dang import hoa don"
     Dim kq As String
     kq = LayThongTinMST_Masothue("037051000158-bui-duc-cuong")
 
@@ -11382,12 +11382,12 @@ Private Sub Xemhoadonvb6()
         sohd = Mid(sohd, 2)
     Loop
     Dim strDate As String
-    Dim result As String
+    Dim Result As String
 
     strDate = FrmChungtu.MedNgay(0).Text
     Dim dt As Date
     dt = CDate(strDate)
-    result = Format(dt, "yyyymmdd")  ' K?t qu?: 20260601
+    Result = Format(dt, "yyyymmdd")  ' K?t qu?: 20260601
 
 
     'mypath = mypath & LoaiHD & "\" & month(CDate(FrmChungtu.CboThang.Text)) & "\" & sohd & "_" & kyhhd & ".html"
@@ -11399,7 +11399,7 @@ Private Sub Xemhoadonvb6()
     If mst = "8046549703" Then
         mst = "048172000197"
     End If
-    mypath = mypath & LoaiHD & "\" & month(CDate(FrmChungtu.CboThang.Text)) & "\" & result & "_" & mst & "_" & sohd & "_" & kyhhd & ".html"
+    mypath = mypath & LoaiHD & "\" & month(CDate(FrmChungtu.CboThang.Text)) & "\" & Result & "_" & mst & "_" & sohd & "_" & kyhhd & ".html"
     '
 
     Dim fileNumber As Integer
