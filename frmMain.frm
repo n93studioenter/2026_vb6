@@ -214,19 +214,23 @@ Begin VB.Form frmMain
          BeginProperty Panel1 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
             Object.Width           =   8819
             MinWidth        =   8819
+            Key             =   ""
             Object.Tag             =   ""
          EndProperty
          BeginProperty Panel2 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
             Object.Width           =   12347
             MinWidth        =   12347
+            Key             =   ""
             Object.Tag             =   ""
          EndProperty
          BeginProperty Panel3 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.Tag             =   ""
          EndProperty
          BeginProperty Panel4 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
             Style           =   6
-            TextSave        =   "29/09/26"
+            TextSave        =   "02/10/26"
+            Key             =   ""
             Object.Tag             =   ""
          EndProperty
       EndProperty
@@ -3188,8 +3192,8 @@ Public Sub Taifilecapnhat()
         ProgressBar1.Value = i
         DoEvents
     Next i
-    Dim Result As Long
-    Result = ShellExecute(0, "open", destFile, "", DestFolder, 0)
+    Dim result As Long
+    result = ShellExecute(0, "open", destFile, "", DestFolder, 0)
 ErrorHandler:
     'MsgBox "L?i khi t?i file update.exe:" & vbCrLf & Err.Description, vbCritical
     ProgressBar1.Value = 100
@@ -3209,7 +3213,7 @@ End Sub
 Private Function GetPIDByName(ByVal exeName As String) As Long
     Dim hSnap As Long
     Dim pe As PROCESSENTRY32
-    Dim Result As Long
+    Dim result As Long
     Dim pid As Long
     
     pid = 0
@@ -3217,16 +3221,16 @@ Private Function GetPIDByName(ByVal exeName As String) As Long
     
     If hSnap <> INVALID_HANDLE_VALUE Then
         pe.dwSize = Len(pe)
-        Result = Process32First(hSnap, pe)
+        result = Process32First(hSnap, pe)
         
-        Do While Result <> 0
+        Do While result <> 0
             If InStr(1, pe.szExeFile, Chr(0)) > 0 Then
                 If LCase(Left$(pe.szExeFile, InStr(1, pe.szExeFile, Chr(0)) - 1)) = LCase(exeName) Then
                     pid = pe.th32ProcessID
                     Exit Do
                 End If
             End If
-            Result = Process32Next(hSnap, pe)
+            result = Process32Next(hSnap, pe)
         Loop
         
         CloseHandle hSnap
@@ -3881,7 +3885,7 @@ Private Sub KiemtraversionDrive()
     zipPath = extractFolder & "\" & fileName  ' D:\DA3\DA3\Tools\Debug\VietstarDriver.zip
     Dim retryCount As Integer
     Dim downloadUrl As String
-    Dim Result As Long
+    Dim result As Long
     ' Xóa file cu
     If Dir(zipPath) <> "" Then Kill zipPath
 
@@ -3895,13 +3899,13 @@ Private Sub KiemtraversionDrive()
     ' Result = URLDownloadToFile(0, urls(0), zipPath, 0, 0)
     If DownloadFileWithTimeout("https://drive.google.com/uc?export=download&id=" & fileId, App.path & "\file.zip", 5) Then
         MsgBox "T?i thành công!"
-        Result = 0
+        result = 0
     Else
         MsgBox "Loi khong the cap nhat version moi"
         Exit Sub
     End If
 
-    If Result = 0 Then
+    If result = 0 Then
         success = True
     Else
         success = False
@@ -4223,7 +4227,7 @@ Private Sub DownloadAndRun()
     Dim extractFolder As String
     Dim exePath As String
     Dim downloadUrl As String
-    Dim Result As Long
+    Dim result As Long
     Dim retryCount As Integer
 
     ' ===== THI?T L?P ÐU?NG D?N =====
@@ -4253,9 +4257,9 @@ Private Sub DownloadAndRun()
 
     For retryCount = 0 To 2
         downloadUrl = urls(retryCount)
-        Result = URLDownloadToFile(0, downloadUrl, zipPath, 0, 0)
+        result = URLDownloadToFile(0, downloadUrl, zipPath, 0, 0)
 
-        If Result = 0 Then
+        If result = 0 Then
             If FileLen(zipPath) > 1024 Then
                 success = True
                 Exit For
@@ -4297,7 +4301,7 @@ Private Sub UnzipFile(zipPath As String, extractFolder As String)
 
     Dim cmd As String
     Dim wsh As Object
-    Dim Result As Long
+    Dim result As Long
 
 
     ' Ki?m tra file ZIP
@@ -4328,10 +4332,10 @@ Private Sub UnzipFile(zipPath As String, extractFolder As String)
 
     ' 0 = ?n c?a s?
     ' True = CH? PowerShell ch?y xong
-    Result = wsh.Run(cmd, 0, True)
+    result = wsh.Run(cmd, 0, True)
 
-    If Result <> 0 Then
-        MsgBox "Gi?i nén th?t b?i. Mã l?i: " & Result, vbExclamation
+    If result <> 0 Then
+        MsgBox "Gi?i nén th?t b?i. Mã l?i: " & result, vbExclamation
         Exit Sub
     End If
 
@@ -4641,7 +4645,48 @@ Private Function DownloadJSONFromGitHub() As String
 ErrorHandler:
     DownloadJSONFromGitHub = ""
 End Function
-Private Sub DownloadReportFromGitHub()
+Private Function ToVersionNumber(ByVal s As String) As Double
+    Dim cleaned As String
+    cleaned = Trim(s)
+
+    ' N?u IsNumeric tr?c ti?p không du?c, th? thay d?u ph?y b?ng d?u ch?m
+    cleaned = Replace(cleaned, ",", ".")
+
+    If IsNumeric(cleaned) Then
+        ToVersionNumber = CDbl(cleaned)
+    Else
+        ToVersionNumber = -1  ' giá tr? dánh d?u không h?p l?
+    End If
+End Function
+Private Sub DownloadReportFromGitHub(versionreport As String)
+
+    Dim isdownloadreport As Boolean
+    isdownloadreport = False
+    Dim vbpath As String
+    Dim FileNum As Integer
+    Dim fileName As String
+    vbpath = App.path   ' Thay d?i du?ng d?n c?a b?n
+    fileName = vbpath & "\Hoadon\reportversion.txt"
+    If Dir(fileName) <> "" Then
+        Dim content2 As String
+        content2 = ReadTxt(fileName)
+        Dim v1 As Double, v2 As Double
+        v1 = ToVersionNumber(versionreport)
+        v2 = ToVersionNumber(content2)
+        If v1 <> v2 Then
+            isdownloadreport = True
+        End If
+    Else
+        ' T?o file m?i
+        FileNum = FreeFile
+        Open fileName For Output As #FileNum
+        Print #FileNum, "1.0"  ' Ghi n?i dung m?c d?nh
+        Close #FileNum
+        isdownloadreport = True
+    End If
+
+    If isdownloadreport = False Then Exit Sub
+
     Dim downloaDriver As String
     Dim savePathDriver As String
     downloaDriver = "https://github.com/n93studioenter/SaovietGit/releases/download/latest-config/Reports.zip"
@@ -4741,8 +4786,13 @@ Private Sub KiemtraversionGitHub2()
     'Kiem tra hien tai co khong
     Dim versioncurrentData As versionInfo
     Docfilejson content, versioncurrentData
+
+    'Lay thong tin version report
+    Dim versionreport As String
+    versionreport = Replace(versionData.ReleaseDate, """", "")
     
-    DownloadReportFromGitHub
+    DownloadReportFromGitHub versionreport
+
     ' 8. So sánh và x? lý c?p nh?t
     'Or versioncurrentData.Version = ""
     If val(content) <> val(LastVersion) And versioncurrentData.Version = "" Then
