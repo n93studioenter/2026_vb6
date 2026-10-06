@@ -6131,7 +6131,7 @@ End Sub
 Private Function StringToUTF8(str As String) As Byte()
     Dim buffer() As Byte
     Dim bufferSize As Long
-    Dim Result As Long
+    Dim result As Long
 
     ' L?y kích thu?c buffer c?n thi?t
     bufferSize = WideCharToMultiByte(CP_UTF8, 0, StrPtr(str), Len(str), 0, 0, 0, 0)
@@ -6140,9 +6140,9 @@ Private Function StringToUTF8(str As String) As Byte()
         ReDim buffer(bufferSize - 1)
 
         ' Chuy?n d?i sang UTF-8
-        Result = WideCharToMultiByte(CP_UTF8, 0, StrPtr(str), Len(str), VarPtr(buffer(0)), bufferSize, 0, 0)
+        result = WideCharToMultiByte(CP_UTF8, 0, StrPtr(str), Len(str), VarPtr(buffer(0)), bufferSize, 0, 0)
 
-        If Result > 0 Then
+        If result > 0 Then
             StringToUTF8 = buffer
         End If
     End If
@@ -11382,12 +11382,12 @@ Private Sub Xemhoadonvb6()
         sohd = Mid(sohd, 2)
     Loop
     Dim strDate As String
-    Dim Result As String
+    Dim result As String
 
     strDate = FrmChungtu.MedNgay(0).Text
     Dim dt As Date
     dt = CDate(strDate)
-    Result = Format(dt, "yyyymmdd")  ' K?t qu?: 20260601
+    result = Format(dt, "yyyymmdd")  ' K?t qu?: 20260601
 
 
     'mypath = mypath & LoaiHD & "\" & month(CDate(FrmChungtu.CboThang.Text)) & "\" & sohd & "_" & kyhhd & ".html"
@@ -11399,7 +11399,7 @@ Private Sub Xemhoadonvb6()
     If mst = "8046549703" Then
         mst = "048172000197"
     End If
-    mypath = mypath & LoaiHD & "\" & month(CDate(FrmChungtu.CboThang.Text)) & "\" & Result & "_" & mst & "_" & sohd & "_" & kyhhd & ".html"
+    mypath = mypath & LoaiHD & "\" & month(CDate(FrmChungtu.CboThang.Text)) & "\" & result & "_" & mst & "_" & sohd & "_" & kyhhd & ".html"
     '
 
     Dim fileNumber As Integer
@@ -15659,7 +15659,7 @@ Private Function KiemTraChungtu() As Boolean
             Exit Function
         End If
     End If
-    If FThuChi.FThuChiForm <> 0 Then
+    If FThuChi.FThuChiForm <> 0 And FThuChi.FThuChiForm <> 3 Then
         If Not rs_import Is Nothing Then
             bakNgayimp2 = rs_import!NLap
         End If
