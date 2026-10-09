@@ -7452,7 +7452,7 @@ Public Sub btnImportXML_Click()
             ")"
 
 
-
+    Debug.Print Query
     Set rs_import = DBKetoan.OpenRecordset(Query, dbOpenSnapshot)
     sttHD = 1
     Dim isloop As Boolean

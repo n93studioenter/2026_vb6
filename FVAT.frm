@@ -1058,19 +1058,16 @@ Private Sub OptChon_Click(Index As Integer)
 End Sub
 
 Private Sub T_Change(Index As Integer)
- If Index = 11 Then
-   If T(11).Text = "2" Then
-     OptChon(1).Value = True
-   ElseIf T(11).Text = "3" Then
-     OptChon(2).Value = True
-   ElseIf T(11).Text = "4" Then
-     OptChon(3).Value = True
-  ElseIf T(11).Text = "5" Then
-     OptChon(4).Value = True
-     Else
-     OptChon(0).Value = True
-   End If
- End If
+    If Index = 11 Then
+        ' Dùng Val() ép sang s? và Select Case d? code ng?n g?n, không lo l?i Text r?ng
+        Select Case val(T(11).Text)
+            Case 2: OptChon(1).Value = True
+            Case 3: OptChon(2).Value = True
+            Case 4: OptChon(3).Value = True
+            Case 5: OptChon(4).Value = True
+            Case Else: OptChon(0).Value = True
+        End Select
+    End If
 End Sub
 
 Public Sub T_GotFocus(Index As Integer)
@@ -1161,12 +1158,12 @@ Public Sub GetPhieu(ttdb As Boolean)
     T(13).Text = FrmChungtu.txtVT(3).Text    ' Format(h.tygia, Mask_0)
     ngay = FrmChungtu.MedNgay(0).Text    'h.NgayPH
     MedNgay.Text = FrmChungtu.MedNgay(0).Text    'h.NgayPH 'FrmChungtu.MedNgay(0).Text ' Format(ngay, Mask_D)
-    If h.HD <> 3 Then
-        ChkV(0).Value = h.HD
-    Else
-        ChkV(0).Value = 0
-        ChkV(6).Value = 1
-    End If
+   ' If h.HD <> 3 Then
+       ' ChkV(0).Value = h.HD
+   ' Else
+       ' ChkV(0).Value = 0
+       ' ChkV(6).Value = 1
+    'End If
     ChkV(2).Value = h.HDBL
     ChkV(1).Value = h.KCT
     ChkV(1).Enabled = (h.TyLe = 0)

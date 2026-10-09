@@ -154,7 +154,7 @@ Sub Main()
     pCurDir = App.path
     If Right(pCurDir, 1) <> "\" Then pCurDir = pCurDir + "\"
     If EXESize > 0 Then
-        If FileLen(pCurDir + App.ExeName + ".EXE") < EXESize - 512 Or FileLen(pCurDir + App.ExeName + ".EXE") > EXESize + 512 Then End
+        If FileLen(pCurDir + App.exeName + ".EXE") < EXESize - 512 Or FileLen(pCurDir + App.exeName + ".EXE") > EXESize + 512 Then End
     End If
     IniPath = Dir(App.path, vbDirectory)
 
@@ -4438,32 +4438,32 @@ End Sub
 
 'Ma hoa
 Function Federo16(ByVal src As String, ByVal FStr As String) As String
-    Dim Result As String
-    Dim Temp$, h$, i%, j%
+    Dim result As String
+    Dim temp$, h$, i%, j%
     j = 1
     For i = 1 To Len(src)
         h = Hex$(Asc(Mid$(src, i, 1)))
         If Len(h) = 1 Then h = "0" & h
-        Temp = Temp & h
+        temp = temp & h
     Next i
-    For i = 1 To Len(Temp)
-        Result = Result & Chr(Asc(Mid$(Temp, i, 1)) + Asc(Mid$(FStr, j, 1)))
+    For i = 1 To Len(temp)
+        result = result & Chr(Asc(Mid$(temp, i, 1)) + Asc(Mid$(FStr, j, 1)))
         j = IIf((j = Len(FStr)), 1, j + 1)
     Next i
-    Federo16 = Result
+    Federo16 = result
 End Function
  
 'mh
 Function Federo16Decrypt(ByVal src As String, ByVal FStr As String) As String
-    Dim Result As String
-    Dim Temp$, i%, j%
+    Dim result As String
+    Dim temp$, i%, j%
     j = 1
     For i = 1 To Len(src)
-        Temp = Temp & Chr(Asc(Mid$(src, i, 1)) - Asc(Mid$(FStr, j, 1)))
+        temp = temp & Chr(Asc(Mid$(src, i, 1)) - Asc(Mid$(FStr, j, 1)))
         j = IIf((j = Len(FStr)), 1, j + 1)
     Next i
-    For i = 1 To Len(Temp) Step 2
-        Result = Result & Chr(CLng("&H" & Mid$(Temp, i, 2)))
+    For i = 1 To Len(temp) Step 2
+        result = result & Chr(CLng("&H" & Mid$(temp, i, 2)))
     Next i
-    Federo16Decrypt = Result
+    Federo16Decrypt = result
 End Function
