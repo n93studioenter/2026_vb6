@@ -600,6 +600,15 @@ Public Sub XoaChungtu()
             Else
                 MsgBox "L?i khi ghi dè file!", vbExclamation
             End If
+
+            Dim url As String
+            url = SelectSQL("SELECT Url AS F1 FROM tbInvoiceInfo")
+            If url = "van.ehoadon.vn" Then
+                GhiChutxt 6
+            End If
+            If url = "vinvoice.viettel.vn" Then
+                GhiChutxt 5
+            End If
             Dim exePath2 As String
             Dim cmd2 As String
 
