@@ -226,7 +226,7 @@ Begin VB.Form frmMain
          EndProperty
          BeginProperty Panel4 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
             Style           =   6
-            TextSave        =   "21/10/26"
+            TextSave        =   "22/10/26"
             Object.Tag             =   ""
          EndProperty
       EndProperty
@@ -5240,6 +5240,7 @@ Private Sub Form_Load()
     'KiemtraversionDrive
     'DownloadAndRun
     ExecuteSQL5 "DELETE FROM tbGetphieu WHERE MaCT = '0'"
+       ExecuteSQL5_Themmoi ("ALTER TABLE tbInvoiceInfo ADD IsMTT Number")
     ExecuteSQL5_Themmoi ("ALTER TABLE ChungTu ADD Thuesuat Number")
     ExecuteSQL5_Themmoi ("ALTER TABLE ChungTu ADD tencongty text")
     ExecuteSQL5_Themmoi ("ALTER TABLE tbRegister ADD tk155 text")
