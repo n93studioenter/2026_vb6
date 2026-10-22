@@ -56,7 +56,7 @@ Begin VB.Form FrmOptions
    Begin VB.Frame Frame2 
       BackColor       =   &H00FFFFC0&
       Caption         =   "Th«ng tin Invoice Portal"
-      Height          =   1935
+      Height          =   2535
       Left            =   9120
       TabIndex        =   144
       Top             =   240
@@ -68,6 +68,15 @@ Begin VB.Form FrmOptions
          Top             =   1560
          Visible         =   0   'False
          Width           =   735
+      End
+      Begin VB.CheckBox chkIsMTT 
+         BackColor       =   &H00FFFFC0&
+         Caption         =   "MTT"
+         Height          =   255
+         Left            =   120
+         TabIndex        =   154
+         Top             =   1800
+         Width           =   3375
       End
       Begin VB.Label Label6 
          BackColor       =   &H00FFFFC0&
@@ -2721,9 +2730,9 @@ Begin VB.Form FrmOptions
       Caption         =   "Label7"
       ForeColor       =   &H000000C0&
       Height          =   255
-      Left            =   9240
+      Left            =   9120
       TabIndex        =   153
-      Top             =   2400
+      Top             =   3000
       Visible         =   0   'False
       Width           =   3735
    End
@@ -3583,30 +3592,30 @@ End Function
 ' HÀM CHUY?N BYTES -> BASE36
 ' ==============================================
 Private Function BytesToBase36(bytes() As Byte) As String
-    Dim Temp() As Long
+    Dim temp() As Long
     Dim result As String
     Dim remainder As Integer
     Dim i As Integer
     
-    ReDim Temp(UBound(bytes))
+    ReDim temp(UBound(bytes))
     For i = 0 To UBound(bytes)
-        Temp(i) = bytes(i)
+        temp(i) = bytes(i)
     Next
     
     result = ""
     Do
         remainder = 0
-        For i = UBound(Temp) To 0 Step -1
-            remainder = remainder * 256 + Temp(i)
-            Temp(i) = remainder \ BASE
+        For i = UBound(temp) To 0 Step -1
+            remainder = remainder * 256 + temp(i)
+            temp(i) = remainder \ BASE
             remainder = remainder Mod BASE
         Next
         result = Mid(CHARSET, remainder + 1, 1) & result
         
         Dim allZero As Boolean
         allZero = True
-        For i = 0 To UBound(Temp)
-            If Temp(i) <> 0 Then
+        For i = 0 To UBound(temp)
+            If temp(i) <> 0 Then
                 allZero = False
                 Exit For
             End If
@@ -4443,7 +4452,7 @@ ErrorHandler:
 End Function
 Private Sub Dongbotxt()
     Text(0).Text = UnicodeToVni(txtTenCty.Text)
-    Text(2).Text = UnicodeToVni(txtDiaChi.Text)
+    Text(2).Text = UnicodeToVni(txtDiachi.Text)
 End Sub
 
 Public Sub Command_Click(Index As Integer)
@@ -4469,10 +4478,11 @@ Public Sub Command_Click(Index As Integer)
                 End If
             End If
             If txtInvoiceUsername.Text <> "" Then
-                ExecuteSQL5 "INSERT INTO tbInvoiceInfo (Url, Username, Password) VALUES ('" & _
+                ExecuteSQL5 "INSERT INTO tbInvoiceInfo (Url, Username, Password, IsMTT) VALUES ('" & _
                             Combo1.Text & "','" & _
                             txtInvoiceUsername.Text & "','" & _
-                            txtIncoiePassword.Text & "')"
+                            txtIncoiePassword.Text & "'," & _
+                            IIf(chkIsMTT.Value = 1, 1, 0) & ")"
                 hastk = True
             End If
         Else
@@ -4625,7 +4635,7 @@ Public Sub Command_Click(Index As Integer)
         End If
 
     End If
- 
+
     checkBoxValue = CheckBox1(0).Value
 
     If checkBoxValue <> 0 Then
@@ -4832,8 +4842,8 @@ Private Sub LoadInfo()
     Dim rsport As Recordset
     Set rsport = DBKetoan.OpenRecordset("SELECT DISTINCTROW tbInvoiceInfo.* FROM tbInvoiceInfo", dbOpenSnapshot)
     If Not rsport.EOF Then
-        txtInvoiceUrl.Text = rsport!URL
-        Combo1.Text = rsport!URL
+        txtInvoiceUrl.Text = rsport!url
+        Combo1.Text = rsport!url
         txtInvoiceUsername.Text = rsport!UserName
         txtIncoiePassword.Text = rsport!Password
     End If
@@ -4906,7 +4916,7 @@ Private Sub LoadInfo()
     txtTenCty.Text = VniToUnicode(pTenCty)
     Text(1).Text = pTenCn
     Text(2).Text = rs!DiaChi
-    txtDiaChi.Text = VniToUnicode(rs!DiaChi)
+    txtDiachi.Text = VniToUnicode(rs!DiaChi)
     Text(3).Text = rs!Tel
     Text(4).Text = rs!Fax
     Text(5).Text = rs!TaiKhoanVN

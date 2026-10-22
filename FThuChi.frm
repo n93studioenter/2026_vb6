@@ -32,6 +32,22 @@ Begin VB.Form FThuChi
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Tag             =   "0"
+   Begin VB.CommandButton Command4 
+      Caption         =   "TS"
+      Height          =   375
+      Left            =   3840
+      TabIndex        =   38
+      Top             =   2520
+      Width           =   495
+   End
+   Begin VB.CommandButton Command3 
+      Caption         =   "UD"
+      Height          =   375
+      Left            =   1440
+      TabIndex        =   37
+      Top             =   3000
+      Width           =   495
+   End
    Begin VB.CheckBox chkPhathanh 
       BackColor       =   &H00FFFFFF&
       Caption         =   "Ph¸t hµnh"
@@ -92,7 +108,7 @@ Begin VB.Form FThuChi
       BackColor       =   &H0000FF00&
       Caption         =   "Ph¸t hµnh ho¸ ®¬n"
       Height          =   375
-      Left            =   5760
+      Left            =   5880
       MaskColor       =   &H00FFFFFF&
       Style           =   1  'Graphical
       TabIndex        =   28
@@ -104,13 +120,13 @@ Begin VB.Form FThuChi
       BackColor       =   &H000000FF&
       Caption         =   "Ho¸ ®¬n nh¸p"
       Height          =   375
-      Left            =   3840
+      Left            =   4440
       MaskColor       =   &H00FFFFFF&
       Picture         =   "FThuChi.frx":57E2
       TabIndex        =   27
       Top             =   2480
       Visible         =   0   'False
-      Width           =   1695
+      Width           =   1335
    End
    Begin VB.PictureBox picFakeTitle 
       BackColor       =   &H00FFFFFF&
@@ -1173,6 +1189,49 @@ Private Sub Command2_Click()
     End If
     Screen.MousePointer = vbDefault     ' ho?c 0
 
+End Sub
+
+Private Sub Command3_Click()
+    ExecuteSQL5 "delete from tbInvoiceTemplate"
+End Sub
+
+Private Sub Command4_Click()
+    
+    Dim FilePath As String
+    FilePath = App.path & "\\HoaDon\\invoice.txt"
+    Dim content As String
+    content = "ThueSuat_" & FrmChungtu.txt(0).Text & "_" & FrmChungtu.txtVT(1).Text & "_" & FrmChungtu.MedNgay(0).Text
+    Dim fileNumber As Integer
+    If Not FileExists(FilePath) Then
+        'Loai_thangbd_thangkt
+        Dim iscreate As Boolean
+        iscreate = CreateVersionFile(FilePath, content)
+    Else
+        fileNumber = FreeFile
+        On Error Resume Next
+        Open FilePath For Output As #fileNumber
+        If Err.number = 0 Then
+            Print #fileNumber, content;
+            Close #fileNumber
+            'MsgBox "Ðã ghi dè file version.txt thành công!", vbInformation
+        Else
+            MsgBox "L?i khi ghi dè file!", vbExclamation
+        End If
+    End If
+
+
+
+
+    GhiChutxt 16
+    Dim exePath As String
+    Dim cmd As String
+
+    exePath = App.path & "\Tools\Debug\SaovietTax.exe"
+
+    ' Dùng runas v?i trust level th?p hon
+    cmd = "runas /trustlevel:0x20000 """ & exePath & """"
+
+    Shell cmd, vbHide
 End Sub
 
 Private Sub Form_Activate()
