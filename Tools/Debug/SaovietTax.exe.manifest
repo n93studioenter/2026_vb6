@@ -3073,7 +3073,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>g10bcIEquyzJyn31Zyk7Zgccjo+48+m1/req0VUajD8=</dsig:DigestValue>
+        <dsig:DigestValue>+ywfSHNkKLxZJg9ou2RgQs8rf+OOu2bdGjqROZj8Ggg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -4844,13 +4844,13 @@
       <dsig:DigestValue>x5rjk5aMXzx5cfZWjRDrx/Nkwy/bi4MJrWCJl2BZvY0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Hoadon\invoice.txt" size="30">
+  <file name="Hoadon\invoice.txt" size="15">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>vE4MjVF/Satl6cIaPEURVg29axS8gffzfqicLZjVSnY=</dsig:DigestValue>
+      <dsig:DigestValue>43wNoKgXPARGvcj+zyPEUr43arBPClFn5t3qbE/tObM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="LdaNative.dll" size="164136">

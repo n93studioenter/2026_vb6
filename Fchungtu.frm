@@ -9791,7 +9791,7 @@ Sub In_hoa_don1(sotien As String, i As Integer, k As Integer, xxx As String, sod
             frmMain.Rpt.Formulas(505) = "Lien='" + "Lieân 3: Noäi boä" + "'"
             Dim urlname As String
             urlname = SelectSQL("select Url AS f1 from  tbInvoiceInfo")
-            If urlname <> "seller-v2.tendoo.vn" And urlname <> "vinvoice.viettel.vn" Then
+            If urlname <> "seller-v2.tendoo.vn" And urlname <> "vinvoice.viettel.vn" And urlname <> "van.ehoadon.vn" Then
                 InBaoCaoRPT pNN
             End If
 
@@ -9799,14 +9799,14 @@ Sub In_hoa_don1(sotien As String, i As Integer, k As Integer, xxx As String, sod
         If CheckBox2.Value = 1 Then
             frmMain.Rpt.Formulas(505) = "Lien='" + "Lieân 2: Giao cho ngöôøi mua  " + "'"
             urlname = SelectSQL("select Url AS f1 from  tbInvoiceInfo")
-            If urlname <> "seller-v2.tendoo.vn" And urlname <> "vinvoice.viettel.vn" Then
+            If urlname <> "seller-v2.tendoo.vn" And urlname <> "vinvoice.viettel.vn" And urlname <> "van.ehoadon.vn" Then
                 InBaoCaoRPT pNN
             End If
         End If
         If CheckBox1.Value = 1 Then
             frmMain.Rpt.Formulas(505) = "Lien='" + "Lieân 1: Löu " + "'"
             urlname = SelectSQL("select Url AS f1 from  tbInvoiceInfo")
-            If urlname <> "seller-v2.tendoo.vn" And urlname <> "vinvoice.viettel.vn" Then
+            If urlname <> "seller-v2.tendoo.vn" And urlname <> "vinvoice.viettel.vn" And urlname <> "van.ehoadon.vn" Then
                 InBaoCaoRPT pNN
             End If
         End If

@@ -2510,7 +2510,13 @@ Public Sub LietKeChungtu_1(shtk As String, mvt As Long, mts As Long, mcn As Long
                 LoaiHD = "KTra"  ' ?
             Else
                 If idnhap <> "" And idnhap <> "0" And idnhap <> "..." Then
-                    LoaiHD = "InVoice"
+                    Dim Statusph As Integer
+                    Statusph = SelectSQL("SELECT StatusPH as f1 FROM HoaDon WHERE MaSo = " & idMaso)
+                    If Statusph = "1" Then
+                        LoaiHD = "DaPH"
+                    Else
+                        LoaiHD = "HDNhap"
+                    End If
                 Else
                     LoaiHD = ""  ' ? (ho?c d? tr?ng)
                 End If
@@ -2695,7 +2701,7 @@ Public Sub LietKeChungtu_11(shtk As String, mvt As Long, mts As Long, mcn As Lon
                                                 "where ChungTu.SoHieu = '" & rs_chungtu!sohieu & "' ", dbOpenSnapshot)
             If Not rsport.EOF Then
                 If Not IsNull(rsport!idnhap) And rsport!idnhap <> "..." And rsport!idnhap <> "" Then
-                    If rsport!StatusPH = "1" Then
+                    If rsport!Statusph = "1" Then
                         LoaiHD = "PH"
                     Else
                         LoaiHD = "HD"

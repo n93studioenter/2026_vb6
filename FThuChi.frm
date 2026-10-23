@@ -1001,7 +1001,7 @@ Private Sub Command1_Click()
         Command2.Enabled = True
         Screen.MousePointer = vbDefault
     Else
-        MsgBox "Timeout! Không nh?n du?c Status = 1 sau 10 giây"
+        'MsgBox "Timeout! Không nh?n du?c Status = 1 sau 10 giây"
         Screen.MousePointer = vbDefault
     End If
 

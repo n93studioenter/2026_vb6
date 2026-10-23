@@ -4452,7 +4452,7 @@ ErrorHandler:
 End Function
 Private Sub Dongbotxt()
     Text(0).Text = UnicodeToVni(txtTenCty.Text)
-    Text(2).Text = UnicodeToVni(txtDiachi.Text)
+    Text(2).Text = UnicodeToVni(txtDiaChi.Text)
 End Sub
 
 Public Sub Command_Click(Index As Integer)
@@ -4489,7 +4489,8 @@ Public Sub Command_Click(Index As Integer)
             ExecuteSQL5 "UPDATE tbInvoiceInfo SET " & _
                         "Url = '" & Replace(Combo1.Text, "'", "''") & "', " & _
                         "Username = '" & Replace(txtInvoiceUsername.Text, "'", "''") & "', " & _
-                        "Password = '" & Replace(txtIncoiePassword.Text, "'", "''") & "'"
+                        "Password = '" & Replace(txtIncoiePassword.Text, "'", "''") & "', " & _
+                        "IsMTT = " & IIf(chkIsMTT.Value = 1, 1, 0)
             hastk = True
         End If
 
@@ -4842,10 +4843,20 @@ Private Sub LoadInfo()
     Dim rsport As Recordset
     Set rsport = DBKetoan.OpenRecordset("SELECT DISTINCTROW tbInvoiceInfo.* FROM tbInvoiceInfo", dbOpenSnapshot)
     If Not rsport.EOF Then
-        txtInvoiceUrl.Text = rsport!url
-        Combo1.Text = rsport!url
-        txtInvoiceUsername.Text = rsport!UserName
-        txtIncoiePassword.Text = rsport!Password
+        txtInvoiceUrl.Text = rsport!url & ""
+        Combo1.Text = rsport!url & ""
+        txtInvoiceUsername.Text = rsport!UserName & ""
+        txtIncoiePassword.Text = rsport!Password & ""
+
+        On Error Resume Next
+        chkIsMTT.Value = 0
+        chkIsMTT.Value = IIf(IsNull(rsport!IsMTT), 0, _
+                             IIf(rsport!IsMTT = True Or rsport!IsMTT = 1, 1, 0))
+        If Err.number <> 0 Then
+            Err.Clear
+            chkIsMTT.Value = 0   ' C?t chua có -> m?c d?nh 0
+        End If
+        On Error GoTo 0
     End If
 
     Dim rs As Recordset, i As Integer
@@ -4916,7 +4927,7 @@ Private Sub LoadInfo()
     txtTenCty.Text = VniToUnicode(pTenCty)
     Text(1).Text = pTenCn
     Text(2).Text = rs!DiaChi
-    txtDiachi.Text = VniToUnicode(rs!DiaChi)
+    txtDiaChi.Text = VniToUnicode(rs!DiaChi)
     Text(3).Text = rs!Tel
     Text(4).Text = rs!Fax
     Text(5).Text = rs!TaiKhoanVN
