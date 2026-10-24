@@ -2510,7 +2510,7 @@ Public Sub LietKeChungtu_1(shtk As String, mvt As Long, mts As Long, mcn As Long
                 LoaiHD = "KTra"  ' ?
             Else
                 If idnhap <> "" And idnhap <> "0" And idnhap <> "..." Then
-                    Dim Statusph As Integer
+                    Dim Statusph As String
                     Statusph = SelectSQL("SELECT StatusPH as f1 FROM HoaDon WHERE MaSo = " & idMaso)
                     If Statusph = "1" Then
                         LoaiHD = "DaPH"
