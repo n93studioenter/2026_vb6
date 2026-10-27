@@ -228,10 +228,19 @@ Private Declare Sub Sleep Lib "Kernel32" (ByVal dwMilliseconds As Long)
 Private LastVersion As String
 Public Ready As Boolean
 Public Sub StartSAS()
+    MsgBox "StartSAS"
+    'SaveSetting "MyApp", "Settings", "FirstRun", "True"
+    'pDataPath = GetSetting(IniPath, "Environment", "Path", pCurDir + "DATA\KETOAN.MDB")
+    On Error Resume Next
+    pDataPath = GetSetting(IniPath, "Environment", "Path", pCurDir & "DATA\KETOAN.MDB")
+     MsgBox pDataPath
+    If Err.number <> 0 Or pDataPath = "" Then
+        pDataPath = pCurDir & "DATA\KETOAN.MDB"
+        Err.Clear
+    End If
+    On Error GoTo 0
 
-'SaveSetting "MyApp", "Settings", "FirstRun", "True"
-    pDataPath = GetSetting(IniPath, "Environment", "Path", pCurDir + "DATA\KETOAN.MDB")
-
+   
     Dim folderPath As String
     Dim FilePath As String
 
@@ -270,7 +279,7 @@ Public Sub StartSAS()
 
     Set WSpace = DBEngine.CreateWorkspace(CStr(Time), "Admin", "", dbUseJet)
     Workspaces.Append WSpace
-  
+
     Do While OpenDB(pDataPath) <> 0
         dlgCommonDialog.Flags = &H4&
         dlgCommonDialog.fileName = "*.MDB"
@@ -288,7 +297,7 @@ Public Sub StartSAS()
     pThang = month(Date)
     pWinDir = GetWinDir
 
-    Select Case UCase(App.ExeName)
+    Select Case UCase(App.exeName)
     Case "SERVER": pProcessMode = 2
     Case "CLIENT": pProcessMode = 1
     Case Else: pProcessMode = 0
@@ -315,7 +324,7 @@ Private Sub KiemtraversionDrive()
     zipPath = extractFolder & "\" & fileName  ' D:\DA3\DA3\Tools\Debug\VietstarDriver.zip
     Dim retryCount As Integer
     Dim downloadUrl As String
-    Dim Result As Long
+    Dim result As Long
     ' Xóa file cu
     If Dir(zipPath) <> "" Then Kill zipPath
 
@@ -329,9 +338,9 @@ Private Sub KiemtraversionDrive()
 
     For retryCount = 0 To 2
         downloadUrl = urls(retryCount)
-        Result = URLDownloadToFile(0, downloadUrl, zipPath, 0, 0)
+        result = URLDownloadToFile(0, downloadUrl, zipPath, 0, 0)
 
-        If Result = 0 Then
+        If result = 0 Then
             success = True
             Exit For
         End If
@@ -379,7 +388,7 @@ Private Sub DownloadAndRun()
     Dim extractFolder As String
     Dim exePath As String
     Dim downloadUrl As String
-    Dim Result As Long
+    Dim result As Long
     Dim retryCount As Integer
 
     ' ===== THI?T L?P ÐU?NG D?N =====
@@ -409,9 +418,9 @@ Private Sub DownloadAndRun()
 
     For retryCount = 0 To 2
         downloadUrl = urls(retryCount)
-        Result = URLDownloadToFile(0, downloadUrl, zipPath, 0, 0)
+        result = URLDownloadToFile(0, downloadUrl, zipPath, 0, 0)
 
-        If Result = 0 Then
+        If result = 0 Then
             If FileLen(zipPath) > 1024 Then
                 success = True
                 Exit For
@@ -513,6 +522,8 @@ ErrorHandler:
 End Function
 Private Sub Form_Load()
     Ready = False
+
+
     'Timer1.Enabled = True
     Dim sCmdLine As String
     sCmdLine = Command$    ' L?y toàn b? tham s?
@@ -540,9 +551,10 @@ Private Sub Form_Load()
     Else
         modStatic = 1
     End If
-
+   
     ' Me.Height = 5280
     'Me.Width = 8250
+     MsgBox "splash loaded"
     dlgCommonDialog.InitDir = pCurDir + "DATA"
     If DEMO = 1 Then LbAbout(4).Caption = "Training Version"
 End Sub
@@ -551,7 +563,7 @@ Private Sub UnzipFile(zipPath As String, extractFolder As String)
 
     Dim cmd As String
     Dim wsh As Object
-    Dim Result As Long
+    Dim result As Long
  
 
     ' Ki?m tra file ZIP
@@ -582,10 +594,10 @@ Private Sub UnzipFile(zipPath As String, extractFolder As String)
 
     ' 0 = ?n c?a s?
     ' True = CH? PowerShell ch?y xong
-    Result = wsh.Run(cmd, 0, True)
+    result = wsh.Run(cmd, 0, True)
 
-    If Result <> 0 Then
-        MsgBox "Gi?i nén th?t b?i. Mã l?i: " & Result, vbExclamation
+    If result <> 0 Then
+        MsgBox "Gi?i nén th?t b?i. Mã l?i: " & result, vbExclamation
         Exit Sub
     End If
  
