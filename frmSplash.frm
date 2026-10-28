@@ -228,12 +228,12 @@ Private Declare Sub Sleep Lib "Kernel32" (ByVal dwMilliseconds As Long)
 Private LastVersion As String
 Public Ready As Boolean
 Public Sub StartSAS()
-    MsgBox "StartSAS"
+    
     'SaveSetting "MyApp", "Settings", "FirstRun", "True"
     'pDataPath = GetSetting(IniPath, "Environment", "Path", pCurDir + "DATA\KETOAN.MDB")
     On Error Resume Next
     pDataPath = GetSetting(IniPath, "Environment", "Path", pCurDir & "DATA\KETOAN.MDB")
-     MsgBox pDataPath
+     
     If Err.number <> 0 Or pDataPath = "" Then
         pDataPath = pCurDir & "DATA\KETOAN.MDB"
         Err.Clear
@@ -554,7 +554,7 @@ Private Sub Form_Load()
    
     ' Me.Height = 5280
     'Me.Width = 8250
-     MsgBox "splash loaded"
+     
     dlgCommonDialog.InitDir = pCurDir + "DATA"
     If DEMO = 1 Then LbAbout(4).Caption = "Training Version"
 End Sub
