@@ -58,10 +58,11 @@ Public Function SoTonKho(thang As Integer, mkho As Long, mtk As Long, mvt As Lon
     Dim sql As String
     
     sql = "SELECT SUM(Tien_" + CStr(CThangDB(thang)) + ") As F1,SUM(Luong_" + CStr(CThangDB(thang)) + ") As F2" + IIf(pGiaUSD > 0, ",SUM(USDTien_" + CStr(CThangDB(thang)) + ") As F3", "") + " FROM TonKho WHERE (True)"
+  Debug.Print sql
     If mkho > 0 Then sql = sql + " AND MaSoKho=" + CStr(mkho)
     If mtk > 0 Then sql = sql + " And MaTaiKhoan=" + CStr(mtk)
     If mvt > 0 Then sql = sql + " And MaVattu=" + CStr(mvt)
-    
+    Debug.Print sql
     ThanhTien = SelectSQL(sql, SoTonKho, tien2)
 End Function
 
@@ -136,7 +137,7 @@ End Function
 '====================================================================================================
 ' Thñ tôc in thÎ kho
 '====================================================================================================
-Public Function InTheKho2(mkho As Long, mvt As Long, tdau As Integer, tcuoi As Integer, thongbao As Boolean, mn As Long, Optional tkdu As String = "", Optional loaitk As Integer = 0, Optional nn As Integer = 0) As Boolean
+Public Function InTheKho2(mkho As Long, mvt As Long, tdau As Integer, tcuoi As Integer, Thongbao As Boolean, mn As Long, Optional tkdu As String = "", Optional loaitk As Integer = 0, Optional nn As Integer = 0) As Boolean
     Dim dkl As Double, dkt As Double, dkt2 As Double
     Dim sqll As String, st As String, i As Integer, dv As String, ps As Double, Dvt2 As Integer
     
@@ -182,7 +183,7 @@ Public Function InTheKho2(mkho As Long, mvt As Long, tdau As Integer, tcuoi As I
     InTheKho2 = True
     Exit Function
 KhongPS:
-    If thongbao Then MsgBox "VËt t­ kh«ng cã tån kho hoÆc ph¸t sinh !", vbInformation, App.ProductName
+    If Thongbao Then MsgBox "VËt t­ kh«ng cã tån kho hoÆc ph¸t sinh !", vbInformation, App.ProductName
     InTheKho2 = False
 End Function
 
@@ -337,7 +338,7 @@ Public Function GetVAT(mvt As Long) As Integer
     GetVAT = SelectSQL(sql)
 End Function
 
-Public Function InTheKho2N(mkho As Long, mvt As Long, ndau As Date, ncuoi As Date, thongbao As Boolean, mn As Long, Optional tkdu As String = "", Optional loaitk As Integer = 0, Optional nn As Integer = 0) As Boolean
+Public Function InTheKho2N(mkho As Long, mvt As Long, ndau As Date, ncuoi As Date, Thongbao As Boolean, mn As Long, Optional tkdu As String = "", Optional loaitk As Integer = 0, Optional nn As Integer = 0) As Boolean
     Dim rs_ps As Recordset, dkl As Double, dkt As Double, dkt2 As Double
     Dim sqll As String, st As String, i As Integer, dv As String, Dvt2 As Integer
     
@@ -372,7 +373,7 @@ Public Function InTheKho2N(mkho As Long, mvt As Long, ndau As Date, ncuoi As Dat
     InTheKho2N = True
     Exit Function
 KhongPS:
-    If thongbao Then MsgBox "VËt t­ kh«ng cã tån kho hoÆc ph¸t sinh !", vbInformation, App.ProductName
+    If Thongbao Then MsgBox "VËt t­ kh«ng cã tån kho hoÆc ph¸t sinh !", vbInformation, App.ProductName
     InTheKho2N = False
 End Function
 
@@ -682,6 +683,7 @@ Public Sub TinhGXK(tdau As Integer, tcuoi As Integer, shvt As String, tkno As St
         ' S?a l?i SQL v?i di?u ki?n t? câu SELECT b?n dã ki?m tra
 
     End If
+    'Lay ra danh sách bán ra
     Debug.Print "Myss" & sql
     Set rs = DBKetoan.OpenRecordset(sql, dbOpenSnapshot)
     Do While Not rs.EOF
@@ -761,6 +763,7 @@ Private Function SoTonKhoN2(ngay As Date, mkho As Long, mtk As Long, mvt As Long
 
     SoTonKhoN2 = SoTonKho(0, mkho, mtk, mvt, ThanhTien, tien2)
     sql = "SELECT Sum(SoPS) As F1,Sum(SoPS2No) As F2" + IIf(pGiaUSD > 0, ",Sum(PSUSD) As F3", "") + " FROM ChungTu WHERE MaVattu=" + CStr(mvt) + " AND (MaLoai=1" + IIf(mkho > 0, " OR MaLoai=4)", ")") + " AND NgayGS<=#" + Format(ngay, Mask_DB) + "# AND MaCT<" + CStr(mct)
+    Debug.Print sql
     If mkho > 0 Then sql = sql + " AND ((MaKho=" + CStr(mkho) + " AND MaLoai=1) OR (MaNguon=" + CStr(mkho) + " AND MaLoai=4))"
     If mtk > 0 Then sql = sql + " And MaTKNo=" + CStr(mtk)
 
