@@ -35,6 +35,12 @@ Begin VB.Form FrmChungtu
    Tag             =   "0"
    WhatsThisButton =   -1  'True
    WhatsThisHelp   =   -1  'True
+   Begin VB.Timer tm1544 
+      Enabled         =   0   'False
+      Interval        =   200
+      Left            =   4080
+      Top             =   6480
+   End
    Begin VB.Timer timerDochungtu 
       Enabled         =   0   'False
       Interval        =   300
@@ -4093,6 +4099,7 @@ Dim isclicktt As Integer
 Const TM = "111"
 Const NH = "112"
 Dim rs_ktchild154 As Recordset
+Dim rs_ktchild1544 As Recordset
 Dim rs_import As Recordset
 Dim rs_exportNL As Recordset
 Dim rs_importNK As Recordset
@@ -4147,18 +4154,18 @@ Dim SetLoaiEnable As Boolean
 Dim shct As String
 Dim xddu As Boolean
 Dim TenTC As String, DiachiTC As String, ctgoc As String, TenNX As String, DiaChiNX As String, TenBH As String, DiaChiBH As String, MSTBH As String, unc1 As String, unc2 As String, unc3 As String, MaKHBH As Long, HanTT As Date
-Attribute DiachiTC.VB_VarUserMemId = 1073938562
-Attribute ctgoc.VB_VarUserMemId = 1073938562
-Attribute TenNX.VB_VarUserMemId = 1073938562
-Attribute DiaChiNX.VB_VarUserMemId = 1073938562
-Attribute TenBH.VB_VarUserMemId = 1073938562
-Attribute DiaChiBH.VB_VarUserMemId = 1073938562
-Attribute MSTBH.VB_VarUserMemId = 1073938562
-Attribute unc1.VB_VarUserMemId = 1073938562
-Attribute unc2.VB_VarUserMemId = 1073938562
-Attribute unc3.VB_VarUserMemId = 1073938562
-Attribute MaKHBH.VB_VarUserMemId = 1073938562
-Attribute HanTT.VB_VarUserMemId = 1073938562
+Attribute DiachiTC.VB_VarUserMemId = 1073938567
+Attribute ctgoc.VB_VarUserMemId = 1073938567
+Attribute TenNX.VB_VarUserMemId = 1073938567
+Attribute DiaChiNX.VB_VarUserMemId = 1073938567
+Attribute TenBH.VB_VarUserMemId = 1073938567
+Attribute DiaChiBH.VB_VarUserMemId = 1073938567
+Attribute MSTBH.VB_VarUserMemId = 1073938567
+Attribute unc1.VB_VarUserMemId = 1073938567
+Attribute unc2.VB_VarUserMemId = 1073938567
+Attribute unc3.VB_VarUserMemId = 1073938567
+Attribute MaKHBH.VB_VarUserMemId = 1073938567
+Attribute HanTT.VB_VarUserMemId = 1073938567
 Dim HD() As tpHoaDon, hdcount As Integer
 Attribute HD.VB_VarUserMemId = 1073938518
 Attribute hdcount.VB_VarUserMemId = 1073938518
@@ -5147,7 +5154,12 @@ Private Sub XulyAddHeader(ByRef rs_import As Recordset)
         RFocus CboThang
 
     Case rs_import!tkno Like "15*" Or (rs_import!tkno Like "64*" And rs_import!Ishaschild = "1")
-        OptLoai(1).Value = True
+        If rs_import!Type = 4 Then
+            OptLoai(2).Value = True
+        Else
+            OptLoai(1).Value = True
+        End If
+
         OptLoai_LostFocus 0
         RFocus CboThang
 
@@ -5178,8 +5190,8 @@ Private Sub XulyAddHeader(ByRef rs_import As Recordset)
     Dim Query As String
     Dim getMst As String
     getMst = rs_import!mst
- 
-    Query = "SELECT Ten, DiaChi, MST FROM KhachHang WHERE MST = '" & getMst & "'"
+
+    Query = "SELECT Ten,SoHieu, DiaChi, MST FROM KhachHang WHERE MST = '" & getMst & "'"
     Set rs_ktra = DBKetoan.OpenRecordset(Query, dbOpenSnapshot)
 
     If rs_ktra.EOF Then
@@ -7098,7 +7110,15 @@ Private Sub XuLy154Child3()
         Timer154c.Enabled = True
     End If
 End Sub
-
+Private Sub Xuly154Child4(ByRef rs_import As Recordset)
+    Dim Query2 As String
+    Query2 = "SELECT * FROM tbimportdetail WHERE ParentId='" & rs_import!id & "'"
+    Set rs_ktchild1544 = DBKetoan.OpenRecordset(Query2, dbOpenSnapshot)
+    If Not rs_ktchild1544.EOF Then
+        tm1544.Enabled = True
+        Exit Sub
+    End If
+End Sub
 Private Sub Xuly154Child(ByRef rs_import As Recordset)
 'Kiem tra xem co con khong
 
@@ -7283,7 +7303,11 @@ Private Sub XulyMiddle(ByRef rs_import As Recordset)
     'Xu ly cho cong trinh 154
     If rs_import!tkno Like "154*" Then
         FThuChi.FThuChiForm = 1
-        Xuly154Child rs_import
+        If rs_import!Type = 4 Then
+            Xuly154Child4 rs_import
+        Else
+            Xuly154Child rs_import
+        End If
     End If
 
     'Xu ly hoa don dau ra 51
@@ -8118,9 +8142,11 @@ Public Sub CmdChitiet_chon()
     End If
 
     If (loaict = 2) And (taikhoan.tk_id = TKVT_ID) And (txtchungtu(3).tag = 0 And txtchungtu(6).tag = 0) And (nt = 0) And STDetail Then
-        If MsgBox("VËt t­ kh«ng cã tån kho! TiÕp tôc ?", vbYesNo + vbCritical, App.ProductName) <> vbYes Then
-            RFocus txtchungtu(2)
-            Exit Sub
+        If FThuChi.FThuChiForm = 0 Then
+            If MsgBox("VËt t­ kh«ng cã tån kho! TiÕp tôc ?", vbYesNo + vbCritical, App.ProductName) <> vbYes Then
+                RFocus txtchungtu(2)
+                Exit Sub
+            End If
         End If
     End If
 
@@ -12208,6 +12234,41 @@ Public Function UniFromCodes(ParamArray Codes() As Variant) As String
 
     UniFromCodes = s
 End Function
+
+Private Sub tm1544_Timer()
+    If Not rs_ktchild1544.EOF Then
+        tm1544.Enabled = False
+        txtchungtu(0).Text = rs_ktchild1544!TkCo
+        txtChungtu_LostFocus (0)
+        RFocus txtchungtu(2)
+        txtchungtu(2).Text = rs_ktchild1544!sohieu
+        txtChungtu_LostFocus (2)
+        RFocus txtchungtu(3)
+        txtchungtu(3).Text = rs_ktchild1544!SoLuong
+        txtChungtu_LostFocus (3)
+        RFocus txtchungtu(4)
+        txtchungtu(4).Text = rs_ktchild1544!dongia
+        txtChungtu_LostFocus (4)
+        RFocus txtchungtu(6)
+        txtchungtu(6).Text = rs_ktchild1544!ttien
+        txtChungtu_KeyPress 6, 13
+
+        rs_ktchild1544.MoveNext
+        tm1544.Enabled = True
+    Else
+        tm1544.Enabled = False
+        txtchungtu(0).Text = rs_import!tkno
+        txtChungtu_LostFocus (0)
+        txtchungtu(2).Text = rs_import!sohieutp
+        txtChungtu_LostFocus (2)
+        RFocus txtchungtu(5)
+        txtchungtu(5).Text = rs_import!TongTien
+        txtChungtu_LostFocus (5)
+        txtChungtu_KeyPress 6, 13
+        timerNext.Enabled = True
+    End If
+
+End Sub
 
 Private Sub tmAfterClick_Timer()
     tmAfterClick.Enabled = False
